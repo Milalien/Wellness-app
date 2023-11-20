@@ -12,11 +12,15 @@
 }
 
 .inputs {
+    margin: 3px;
+    padding: 5px;
     display: flex;
     flex-direction: row;
 }
 
 .notes {
+    margin: 3px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
 }
