@@ -1,1 +1,19 @@
-<p>toolbar works!</p>
+<p>
+    <mat-toolbar>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Health app</span>
+    </mat-toolbar>
+</p>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/Programs" routerLinkActive="active">
+        Programs
+    </button>
+    <button mat-menu-item routerLink="/fooddiary" routerLinkActive="active">
+        Food diary
+    </button>
+    <button mat-menu-item routerLink="/profile" routerLinkActive="active">
+        Profile
+    </button>
+</mat-menu>
