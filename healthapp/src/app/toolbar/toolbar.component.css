@@ -1,0 +1,17 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    background-color: lightpink;
+    color: black;
+}
+
+mat-menu {
+    background-color: lightpink;
+}
+
+button {
+    background-color: lightpink;
+    color: black;
+}
