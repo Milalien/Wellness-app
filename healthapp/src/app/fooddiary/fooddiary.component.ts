@@ -26,4 +26,14 @@ export class FooddiaryComponent {
 
   }
 
+
+  onSubmit(e: any) {
+    console.log(e.value.calories);
+    console.log(e.controls['calories'].status);
+
+
+  }
+
+
+
 }

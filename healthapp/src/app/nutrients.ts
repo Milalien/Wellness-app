@@ -6,4 +6,12 @@ export class Nutrients {
     fat2: string = "";
     notes2: string = "";
 
+    constructor() {
+        this.calories2 = "";
+        this.protein2 = "";
+        this.carbs2 = "";
+        this.fat2 = "";
+        this.notes2 = "";
+    }
+
 }

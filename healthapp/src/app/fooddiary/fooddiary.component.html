@@ -1,52 +1,69 @@
-<p>Food diary</p>
+<h1></h1>
 
-<form>
-    <mat-card>
-        <mat-form-field appearance="fill">
-            <mat-label>Kcal</mat-label>
-            <input matInput placeholder="calories" name="calories" required minlength="1"
-                [(ngModel)]="currentNutrients.calories2" #calories2="ngModel" pattern="^[a-zA-Z][0-9]*$">
-            <mat-error *ngIf="calories2.hasError('required')">Insert total calories</mat-error>
-            <mat-error *ngIf="calories2.hasError('minlength')"></mat-error>
-            <mat-error *ngIf="calories2.hasError('pattern')">Invalid characters</mat-error>
-        </mat-form-field>
-    </mat-card>
 
-    <mat-card>
-        <mat-form-field appearance="fill">
-            <mat-label>Protein</mat-label>
-            <input matInput placeholder="Protein" name="Protein" required minlength="1"
-                [(ngModel)]="currentNutrients.protein2" #protein2="ngModel" pattern="^[a-zA-Z ][0-9]*$">
-            <mat-error *ngIf="calories2.hasError('required')">Insert protein</mat-error>
-            <mat-error *ngIf="calories2.hasError('minlength')">Name too short</mat-error>
-            <mat-error *ngIf="calories2.hasError('pattern')">Invalid characters</mat-error>
-        </mat-form-field>
-    </mat-card>
 
-    <mat-card>
-        <mat-form-field appearance="fill">
-            <mat-label>Carbs</mat-label>
-            <input matInput placeholder="Carbs" name="Carbs" required minlength="1"
-                [(ngModel)]="currentNutrients.carbs2" #carbs2="ngModel" pattern="^[a-zA-Z ][0-9]*$">
-            <mat-error *ngIf="calories2.hasError('required')">insert carbs</mat-error>
-            <mat-error *ngIf="calories2.hasError('minlength')">Name too short</mat-error>
-            <mat-error *ngIf="calories2.hasError('pattern')">Invalid characters</mat-error>
-        </mat-form-field>
-    </mat-card>
+<form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
+    <div class="inputs">
 
-    <mat-card>
-        <mat-form-field appearance="fill">
-            <mat-label>Fat</mat-label>
-            <input matInput placeholder="Fat" name="Fat" required minlength="1" [(ngModel)]="currentNutrients.fat2"
-                #fat2="ngModel" pattern="^[a-zA-Z ][0-9]*$">
-            <mat-error *ngIf="calories2.hasError('required')">insert fat</mat-error>
-            <mat-error *ngIf="calories2.hasError('minlength')">Name too short</mat-error>
-            <mat-error *ngIf="calories2.hasError('pattern')">Invalid characters</mat-error>
-        </mat-form-field>
-    </mat-card>
+        <mat-card>
+            <mat-card-header><mat-card-title>Food diary</mat-card-title></mat-card-header>
+            <mat-card-content>
+                <mat-form-field appearance="fill">
+                    <mat-label>Kcal</mat-label>
+                    <input matInput placeholder="calories" name="calories" [(ngModel)]="currentNutrients.calories2"
+                        #calories2="ngModel" pattern="^[0-9]*$">
+                    <mat-error *ngIf="calories2.hasError('required')">Insert amount</mat-error>
+                    <mat-error *ngIf="calories2.hasError('minlength')"></mat-error>
+                    <mat-error *ngIf="calories2.hasError('pattern')">Invalid characters</mat-error>
+                </mat-form-field>
 
-    <mat-form-field>
-        <mat-label>Notes</mat-label>
-        <textarea matInput></textarea>
-    </mat-form-field>
+
+
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Protein</mat-label>
+                    <input matInput placeholder="Protein" name="Protein" required minlength="1"
+                        [(ngModel)]="currentNutrients.protein2" #protein2="ngModel" pattern="^[0-9]*$">
+                    <mat-error *ngIf="calories2.hasError('required')">Insert amount</mat-error>
+                    <mat-error *ngIf="calories2.hasError('minlength')"></mat-error>
+                    <mat-error *ngIf="calories2.hasError('pattern')">Invalid characters</mat-error>
+                </mat-form-field>
+
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Carbs</mat-label>
+                    <input matInput placeholder="Carbs" name="Carbs" required minlength="1"
+                        [(ngModel)]="currentNutrients.carbs2" #carbs2="ngModel" pattern="^[0-9]*$">
+                    <mat-error *ngIf="calories2.hasError('required')">insert amount</mat-error>
+                    <mat-error *ngIf="calories2.hasError('minlength')"></mat-error>
+                    <mat-error *ngIf="calories2.hasError('pattern')">Invalid characters</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Fat</mat-label>
+                    <input matInput placeholder="Fat" name="Fat" required minlength="1"
+                        [(ngModel)]="currentNutrients.fat2" #fat2="ngModel" pattern="^[0-9]*$">
+                    <mat-error *ngIf="calories2.hasError('required')">insert amount</mat-error>
+                    <mat-error *ngIf="calories2.hasError('minlength')"></mat-error>
+                    <mat-error *ngIf="calories2.hasError('pattern')">Invalid characters</mat-error>
+                </mat-form-field>
+
+
+
+
+                <div class="notes">
+                    <mat-form-field>
+                        <mat-label>Notes</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
 </form>
+
+
+<button type="submit" class="btn btn-success" [disabled]="form1.invalid">Submit</button>

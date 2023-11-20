@@ -1,0 +1,22 @@
+.container {
+    padding: 80px;
+    max-width: 50px;
+
+    display: inline-flex;
+    flex: auto;
+}
+
+.content {
+    padding: 50px;
+
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+}
+
+.notes {
+    display: flex;
+    flex-direction: column;
+}
