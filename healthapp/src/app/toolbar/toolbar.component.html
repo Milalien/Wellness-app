@@ -1,5 +1,5 @@
 <p>
-    <mat-toolbar>
+    <mat-toolbar color="primary">
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with menu icon">
             <mat-icon>menu</mat-icon>
         </button>
@@ -11,7 +11,7 @@
 
     </mat-toolbar>
 </p>
-<mat-menu #menu="matMenu">
+<mat-menu color="primary" #menu="matMenu">
     <button mat-menu-item routerLink="/programs" routerLinkActive="active">
         Programs
     </button>

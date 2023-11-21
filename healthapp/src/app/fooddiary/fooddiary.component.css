@@ -24,3 +24,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.foodcard {
+    background-color: var(--primary);
+}
+
+.foodfields {
+    background-color: var(--accent);
+}

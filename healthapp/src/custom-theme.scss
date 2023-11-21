@@ -11,8 +11,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$healthapp-primary: mat.define-palette(mat.$pink-palette);
-$healthapp-accent: mat.define-palette(mat.$amber-palette);
+$healthapp-primary: mat.define-palette(mat.$pink-palette, 200);
+$healthapp-accent: mat.define-palette(mat.$amber-palette, 100, 200, A100);
 $healthapp-typography: mat.define-typography-config();
 
 // The warn palette is optional (defaults to red).
@@ -23,10 +23,21 @@ $healthapp-warn: mat.define-palette(mat.$pink-palette);
 $healthapp-theme: mat.define-dark-theme((color: (primary: $healthapp-primary,
         accent: $healthapp-accent,
         warn: $healthapp-warn,
-      ) typography: mat.define-typography-config($font-family: serif,
-      )));
+      ), typography: mat.define-typography-config($font-family: helvetica)));
+
+
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($healthapp-theme);
+
+@include mat.all-component-colors($healthapp-theme);
+@include mat.all-component-typographies($healthapp-theme);
+@include mat.all-component-densities($healthapp-theme);
+@include mat.all-component-bases($healthapp-theme);
+
+* {
+  --primary: #{mat.get-color-from-palette($healthapp-primary, 200)};
+  --accent: #{mat.get-color-from-palette($healthapp-accent, 200)};
+  --warn: #{mat.get-color-from-palette($healthapp-warn, 400)};
+}

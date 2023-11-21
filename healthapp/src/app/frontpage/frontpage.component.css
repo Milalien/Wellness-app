@@ -5,11 +5,12 @@ mat-card {
 }
 
 .todo-card {
-
+    background-color: var(--accent);
     padding: 2px;
     margin: 5px;
 }
 
 .todos {
     max-width: 400px;
+    background-color: var(--primary);
 }
