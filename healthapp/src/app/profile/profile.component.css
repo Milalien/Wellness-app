@@ -1,0 +1,55 @@
+.container {
+    background-color: var(--primary);
+    max-width: 500px;
+}
+
+.profilePic {
+    background-color: var(--primary);
+    max-width: 200px;
+    max-height: 200px;
+    margin: 5px;
+    padding: 3px;
+}
+
+.userName {
+    background-color: var(--primary);
+    max-width: 150px;
+    margin: 5px;
+    padding: 3px;
+}
+
+.email {
+    background-color: var(--primary);
+    max-width: 150px;
+    margin: 5px;
+    padding: 3px;
+}
+
+.stats {
+    background-color: var(--primary);
+    max-width: 100px;
+    margin: 5px;
+    padding: 3px;
+}
+
+.settings {
+    background-color: var(--primary);
+    max-width: 350px;
+    margin: 5px;
+    padding: 3px;
+    flex-direction: row;
+}
+
+.changePassword {
+    margin: 5px;
+    padding: 3px;
+    flex: auto;
+    flex-direction: row;
+}
+
+.changeEmail {
+    margin: 5px;
+    padding: 3px;
+    flex: auto;
+    flex-direction: row;
+}
