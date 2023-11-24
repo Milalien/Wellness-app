@@ -1,5 +1,12 @@
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
 .container {
-    width: 500px;
-    align-items: center;
+    max-width: 80%;
     margin: auto;
+    background-color: var(--primary);
 }

@@ -63,21 +63,23 @@ const colors: Record<string, EventColor> = {
 
 export class CalendarComponent {
 
-  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
-  private modal: NgbModal;
+  @ViewChild('modalContent', { static: true }) modalContent!: TemplateRef<any>;
+
 
   view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
 
   viewDate: Date = new Date();
-  constructor() {
 
-  }
-  modalData: {
+  modalData!: {
     action: string;
     event: CalendarEvent;
   };
+
+  constructor(private modal: NgbModal) {
+
+  }
 
   actions: CalendarEventAction[] = [
     {
@@ -139,7 +141,9 @@ export class CalendarComponent {
     },
   ];
   activeDayIsOpen: boolean = true;
-  //
+
+
+
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
