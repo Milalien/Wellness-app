@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './frontpage.component.css'
 })
 export class FrontpageComponent {
+  moodcolor: string;
 
+  constructor() {
+    this.moodcolor = "";
+  }
 }

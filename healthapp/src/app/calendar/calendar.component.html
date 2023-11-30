@@ -48,3 +48,55 @@
         </div>
     </mat-card-content>
 </mat-card>
+<mat-card class="container">
+    <mat-card-content>
+
+        <button mat-raised-button color="accent" (click)="addEvent()">
+            Add new
+        </button>
+
+        <mat-accordion class="newEvent">
+            <mat-expansion-panel [expanded]="xpand" *ngFor="let event of events">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{event.title}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Event details
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="event.title" (keyup)="refresh.next()">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="color" [(ngModel)]="event.color" (change)="refresh.next()">
+                </mat-form-field>
+                <mat-form-field>
+
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="event.start" (ngModelChange)="refresh.next()">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker2" [(ngModel)]="event.end" (ngModelChange)="refresh.next()">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+                <button mat-fab color="primary" (click)="deleteEvent(event)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+
+
+
+
+
+    </mat-card-content>
+</mat-card>

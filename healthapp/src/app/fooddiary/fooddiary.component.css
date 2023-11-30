@@ -1,34 +1,15 @@
-.container {
-    padding: 80px;
-    max-width: 50px;
-
-    display: inline-flex;
-    flex: auto;
-}
-
-.content {
-    padding: 50px;
-
-}
-
-.inputs {
-    margin: 3px;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-}
-
 .notes {
-    margin: 3px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
 }
 
 .foodcard {
     background-color: var(--primary);
+    display: flex;
+    margin: auto;
+    max-width: 50%;
+    padding: 2px;
 }
 
-.foodfields {
-    background-color: var(--accent);
+.nutrient {
+    width: 25%;
 }

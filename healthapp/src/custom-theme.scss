@@ -38,6 +38,6 @@ $healthapp-theme: mat.define-dark-theme((color: (primary: $healthapp-primary,
 
 * {
   --primary: #{mat.get-color-from-palette($healthapp-primary, 200)};
-  --accent: #{mat.get-color-from-palette($healthapp-accent, 200)};
+  --accent: #{mat.get-color-from-palette($healthapp-accent, 100)};
   --warn: #{mat.get-color-from-palette($healthapp-warn, 400)};
 }

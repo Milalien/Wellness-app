@@ -1,10 +1,10 @@
 export class User {
-    userName: string = "";
-    firstName: string = "";
-    lastName: string = "";
-    email: string = "";
-    password: string = "";
-    passwordConfirm: string = "";
+    userName: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
+    passwordConfirm: string;
 
     constructor() {
         this.userName = "";

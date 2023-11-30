@@ -1,16 +1,40 @@
-mat-card {
-
-    margin: 10px;
-
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
 }
 
-.todo-card {
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+
+.todo-card,
+.stat {
+
     background-color: var(--accent);
     padding: 2px;
     margin: 5px;
 }
 
-.todos {
-    max-width: 400px;
+.todos,
+.stats {
+    width: 400px;
+    background-color: var(--primary);
+    height: min-content;
+    margin: 5%;
+}
+
+.mood {
+    margin: 10px auto 10px auto;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary);
 }
