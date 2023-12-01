@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +27,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { CalendarModule, DateAdapter } from 'angular-calendar';
@@ -47,6 +47,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CommonModule,
     CalendarModule.forRoot({
@@ -64,15 +65,12 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
-
-
     MatToolbarModule,
     MatMenuModule,
     MatNativeDateModule,
     MatSliderModule,
     MatButtonModule,
     MatTooltipModule,
-    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
