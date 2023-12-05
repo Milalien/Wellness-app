@@ -5,6 +5,10 @@ export class User {
     email: string;
     password: string;
     passwordConfirm: string;
+    height: string;
+    weight: string;
+
+
 
     constructor() {
         this.userName = "";
@@ -13,6 +17,8 @@ export class User {
         this.email = "";
         this.password = "";
         this.passwordConfirm = "";
+        this.height = "";
+        this.weight = "";
     }
 
 
