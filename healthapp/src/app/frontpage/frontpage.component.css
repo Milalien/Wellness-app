@@ -1,14 +1,20 @@
-.container {
+.column {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: start;
+    flex-flow: column wrap;
+    max-width: fit-content;
+    margin: 2px;
 }
+
 
 .content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.comp {
+    max-width: 450px;
 }
 
 
@@ -23,10 +29,10 @@
 
 .todos,
 .stats {
-    width: 400px;
+    width: 300px;
     background-color: var(--primary);
     height: min-content;
-    margin: 5%;
+    margin: 2px;
 }
 
 .mood {

@@ -1,5 +1,5 @@
 <div class="content">
-    <div class="container">
+    <div class="column">
         <!--List of todo's, will be imported from calendar events / programs-->
         <mat-card class="todos" role="group" aria-labelledby="todo-today" tabindex="0">
             <mat-card-header>
@@ -25,7 +25,7 @@
             </mat-card-content>
         </mat-card>
     </div>
-    <div class="container">
+    <div class="column">
 
         <!--Card with a mood indicator-->
         <mat-card class="mood">
@@ -42,12 +42,17 @@
             </mat-card-content>
         </mat-card>
         <!--Food diary component-->
-        <app-fooddiary></app-fooddiary>
+        <div class="comp">
+            <app-fooddiary></app-fooddiary>
+        </div>
     </div>
 
-    <div class="container">
+    <div class="column">
         <!--Calendar component-->
-        <app-calendar></app-calendar>
+        <div class="comp">
+            <app-calendar></app-calendar>
+
+        </div>
 
 
     </div>
