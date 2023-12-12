@@ -1,0 +1,35 @@
+<mat-card class="loginCard">
+    <mat-card-header><mat-card-title>LOG IN</mat-card-title></mat-card-header>
+
+    <mat-card-content>
+        <form [formGroup]="LoginForm" (ngSubmit)="LogIn()">
+            <div class="formdiv">
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-error *ngIf="email?.hasError('required')">Enter your email</mat-error>
+                    <mat-error *ngIf="email?.hasError('pattern')">No account for this email</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Your password</mat-label>
+                    <input matInput type="password" placeholder="Your password" formControlName="password">
+                    <mat-error *ngIf="password?.hasError('required')">Input password</mat-error>
+                    <mat-error *ngIf="password?.hasError('pattern')">Incorrect password</mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="btn">
+
+                <button mat-raised-button color="accent" type="submit">SIGN IN</button>
+                <button mat-raised-button color="accent" (click)="Cancel()">CANCEL</button>
+
+            </div>
+
+        </form>
+
+    </mat-card-content>
+
+
+</mat-card>

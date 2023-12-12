@@ -1,16 +1,16 @@
 <mat-card class="container">
     <h1>Your Profile</h1>
     <mat-card class="profilePic">
-        <img alt="item" [src]="itemImageUrl" width="200px">
+        <img alt="item" [src]="user.profilepic" width="200px">
 
     </mat-card>
 
     <mat-card class="userName">
-        <p>Username</p>
+        <p>{{user.userName}}</p>
     </mat-card>
 
     <mat-card class="email">
-        <p>Email</p>
+        <p>{{user.email}}</p>
     </mat-card>
 
     <mat-card class="stats">
@@ -18,11 +18,11 @@
         <mat-card-content class="statGrid">
             <div>
                 <p>Height:</p>
-                <p>0987654</p>
+                <p>{{user.height}}</p>
             </div>
             <div>
                 <p>Weight:</p>
-                <p>098765</p>
+                <p>{{user.weight}}</p>
             </div>
         </mat-card-content>
     </mat-card>

@@ -5,9 +5,9 @@ export class User {
     email: string;
     password: string;
     passwordConfirm: string;
-    height: string;
-    weight: string;
-
+    height: number;
+    weight: number;
+    profilepic: string;
 
 
     constructor() {
@@ -17,8 +17,9 @@ export class User {
         this.email = "";
         this.password = "";
         this.passwordConfirm = "";
-        this.height = "";
-        this.weight = "";
+        this.height = 0;
+        this.weight = 0;
+        this.profilepic = "";
     }
 
 
