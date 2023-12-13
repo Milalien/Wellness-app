@@ -35,6 +35,9 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlatpickrModule } from 'angularx-flatpickr';
 
+
+
+
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -52,7 +55,8 @@ import { ModuleWithProviders } from '@angular/core';
     FooddiaryComponent,
     ToolbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+
   ],
   imports: [
     BrowserModule,
