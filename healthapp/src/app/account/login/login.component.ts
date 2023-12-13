@@ -3,6 +3,7 @@ import { User } from '../../user';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
 import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +15,11 @@ export class LoginComponent {
   LoginForm: FormGroup;
   eMail: string = "moi@moi.fi";
   passWord: string = "Moimoi222!";
-  user: User = new User();
+  user: User;
 
-  constructor(public router: Router, public authService: AuthService) {
+  constructor(public router: Router, public authService: AuthService, private userServise: UserService) {
+    this.user = new User(this.userServise.userName, this.userServise.firstName, this.userServise.lastName,
+      this.userServise.email, this.userServise.password, this.userServise.height, this.userServise.weight, this.userServise.profilepic);
     this.user.email = this.eMail;
     this.user.password = this.passWord;
     this.LoginForm = new FormGroup({
@@ -37,6 +40,6 @@ export class LoginComponent {
     }
   }
   Cancel() {
-    this.router.navigate(['calculator']);
+    this.router.navigate(['account/login']);
   }
 }

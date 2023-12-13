@@ -9,16 +9,11 @@ import { UserService } from '../services/user.service';
 })
 export class ProfileComponent {
 
-  user: User = new User();
+  user: User;
 
   constructor(private userServise: UserService) {
-    this.user.userName = this.userServise.userName;
-    this.user.firstName = this.userServise.firstName;
-    this.user.lastName = this.userServise.lastName;
-    this.user.email = this.userServise.email;
-    this.user.password = this.userServise.password;
-    this.user.height = this.userServise.height;
-    this.user.weight = this.userServise.weight;
-    this.user.profilepic = this.userServise.profilepic;
+    this.user = new User(this.userServise.userName, this.userServise.firstName, this.userServise.lastName,
+      this.userServise.email, this.userServise.password, this.userServise.height, this.userServise.weight, this.userServise.profilepic);
+
   }
 }

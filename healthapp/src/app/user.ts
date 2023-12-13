@@ -10,16 +10,16 @@ export class User {
     profilepic: string;
 
 
-    constructor() {
-        this.userName = "";
-        this.firstName = "";
-        this.lastName = "";
-        this.email = "";
-        this.password = "";
-        this.passwordConfirm = "";
-        this.height = 0;
-        this.weight = 0;
-        this.profilepic = "";
+    constructor(uName: string, fName: string, lName: string, eMail: string, pswrd: string, hgt: number, wgt: number, pfPic: string) {
+        this.userName = uName;
+        this.firstName = fName;
+        this.lastName = lName;
+        this.email = eMail;
+        this.password = pswrd;
+        this.passwordConfirm = this.password;
+        this.height = hgt;
+        this.weight = wgt;
+        this.profilepic = pfPic;
     }
 
 
