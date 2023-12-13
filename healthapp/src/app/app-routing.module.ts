@@ -5,6 +5,8 @@ import { FooddiaryComponent } from './fooddiary/fooddiary.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
+import { LoginComponent } from './account/login/login.component';
+import { RegisterComponent } from './account/register/register.component';
 
 const routes: Routes = [
   { path: 'calendar', component: CalendarComponent },
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'fooddiary', component: FooddiaryComponent },
   { path: 'programs', component: ProgramsComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'account/login', component: LoginComponent },
+  { path: 'account/register', component: RegisterComponent },
   { path: '', redirectTo: '/frontpage', pathMatch: 'full' }
 ];
 

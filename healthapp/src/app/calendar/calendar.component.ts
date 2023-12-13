@@ -24,6 +24,7 @@ import {
   CalendarView,
 } from 'angular-calendar';
 import { EventColor } from 'calendar-utils';
+import { EventsService } from '../services/events.service';
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -79,7 +80,7 @@ export class CalendarComponent {
     event: CalendarEvent;
   };
 
-  constructor(private modal: NgbModal) {
+  constructor(private modal: NgbModal, private eventsService: EventsService) {
 
   }
 
@@ -102,8 +103,8 @@ export class CalendarComponent {
   ];
   refresh = new Subject<void>();
 
-  events: CalendarEvent[] = [];
-  activeDayIsOpen: boolean = true;
+  events = this.eventsService.getEvents();
+  activeDayIsOpen: boolean = false;
 
 
 
@@ -145,8 +146,7 @@ export class CalendarComponent {
   }
 
   addEvent(): void {
-    this.events = [
-      ...this.events,
+    this.eventsService.addEvent(
       {
         title: 'New event',
         start: startOfDay(new Date()),
@@ -157,12 +157,13 @@ export class CalendarComponent {
           beforeStart: true,
           afterEnd: true,
         },
-      },
-    ];
+      });
+    this.events = this.eventsService.getEvents();
   }
 
   deleteEvent(eventToDelete: CalendarEvent) {
-    this.events = this.events.filter((event) => event !== eventToDelete);
+    this.eventsService.deleteEvent(eventToDelete);
+    this.events = this.eventsService.getEvents();
   }
 
   setView(view: CalendarView) {
