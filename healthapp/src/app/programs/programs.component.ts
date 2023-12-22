@@ -36,5 +36,15 @@ export class ProgramsComponent {
     console.log(this.exerciseForm.value);
   }
 
+  onSubmit(e: any) {
+
+
+    //DOes fuckall, will fix later
+    console.log(this.exerciseForm.value);
+
+
+
+  }
+
 
 }

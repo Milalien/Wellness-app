@@ -1,26 +1,19 @@
 <p>programs works!</p>
 <div>
-    <form [formGroup]="exerciseForm">
-        <div formArrayName="exerciseList">
+    <form [formGroup]="exerciseForm" (ngSubmit)="onSubmit(form2)" #form2="ngForm">
+        <div class="exercise" formArrayName="exerciseList">
             <mat-card *ngFor="let exercise of exerciseListArray().controls; let i = index;">
 
-                <input type="text" name="" id="" formControlName="exerciseName" placeholder="exercise">
-                <input type="text" name="" id="" formControlName="exerciseType" placeholder="type">
+                <input type="text" name="" id="" formControlName="exerciseName" placeholder="type">
+                <input type="text" name="" id="" formControlName="exerciseType" placeholder="exercise">
                 <input type="text" name="" id="" formCOntrolName="exerciseReps" placeholder="reps">
                 <button mat-raised-button color="warm" (click)="removeExercise(i)">Remove exercise</button>
 
             </mat-card>
-            <div>
-                <div>
 
-
-                    <input type="text" name="" id="" placeholder="reps">
-                    <button mat-raised-button color="warm">Remove</button>
-                </div>
-            </div>
         </div>
         <button mat-raised-button color="warm" (click)="addExercise()">Add exercise</button>
-        <button mat-raised-button color="warm">Submit</button>
+        <button mat-raised-button color="warm" [disabled]="form2.invalid">Submit</button>
 
     </form>
 </div>

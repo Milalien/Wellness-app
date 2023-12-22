@@ -1,0 +1,7 @@
+.exercise {
+    width: 250px;
+    flex-direction: column;
+    padding: 5px;
+    align-content: center;
+
+}
