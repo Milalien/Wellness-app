@@ -7,16 +7,17 @@ import { ProfileComponent } from './profile/profile.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'calendar', component: CalendarComponent },
-  { path: 'frontpage', component: FrontpageComponent },
-  { path: 'fooddiary', component: FooddiaryComponent },
-  { path: 'programs', component: ProgramsComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'account/login', component: LoginComponent },
-  { path: 'account/register', component: RegisterComponent },
-  { path: '', redirectTo: '/frontpage', pathMatch: 'full' }
+  { path: 'calendar', component: CalendarComponent, canActivate: [authGuard] },
+  { path: 'frontpage', component: FrontpageComponent, canActivate: [authGuard] },
+  { path: 'fooddiary', component: FooddiaryComponent, canActivate: [authGuard] },
+  { path: 'programs', component: ProgramsComponent, canActivate: [authGuard]},
+  { path: 'profile', component: ProfileComponent, canActivate: [authGuard]},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({

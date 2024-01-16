@@ -1,5 +1,8 @@
 <mat-card class="container">
+    <mat-card-header>
     <h1>Your Profile</h1>
+
+    </mat-card-header>
     <mat-card class="profilePic">
         <img alt="item" [src]="user.profilepic" width="200px">
 
@@ -36,4 +39,8 @@
         <button mat-raised-button color="warn">Change Email</button>
 
     </mat-card>
+    
+        <button mat-raised-button color="warn" (click)="LogOut()">SIGN OUT</button>
+        
+    
 </mat-card>

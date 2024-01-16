@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,9 +13,10 @@ export class ProfileComponent {
 
   user: User;
 
-  constructor(private userServise: UserService) {
-    this.user = new User(this.userServise.userName, this.userServise.firstName, this.userServise.lastName,
-      this.userServise.email, this.userServise.password, this.userServise.height, this.userServise.weight, this.userServise.profilepic);
-
+  constructor(private userServise: UserService, public router: Router, public authService: AuthService) {
+    this.user = new User(this.userServise);
+  }
+  LogOut() {
+    this.authService.logout();
   }
 }

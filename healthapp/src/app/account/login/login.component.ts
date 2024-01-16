@@ -8,20 +8,16 @@ import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrl: './login.component.css'
 })
 export class LoginComponent {
 
   LoginForm: FormGroup;
-  eMail: string = "moi@moi.fi";
-  passWord: string = "Moimoi222!";
+  
   user: User;
 
-  constructor(public router: Router, public authService: AuthService, private userServise: UserService) {
-    this.user = new User(this.userServise.userName, this.userServise.firstName, this.userServise.lastName,
-      this.userServise.email, this.userServise.password, this.userServise.height, this.userServise.weight, this.userServise.profilepic);
-    this.user.email = this.eMail;
-    this.user.password = this.passWord;
+  constructor(public router: Router, public authService: AuthService, private userservice: UserService) {
+    this.user = new User(this.userservice);
     this.LoginForm = new FormGroup({
       email: new FormControl(this.user.email, [Validators.required, Validators.pattern(this.user.email)]),
       password: new FormControl(this.user.password, [Validators.required, Validators.pattern(this.user.password)]),
@@ -40,6 +36,7 @@ export class LoginComponent {
     }
   }
   Cancel() {
-    this.router.navigate(['account/login']);
+    this.router.navigate(['frontpage']);
   }
+
 }

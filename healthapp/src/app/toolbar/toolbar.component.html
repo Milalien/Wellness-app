@@ -8,7 +8,17 @@
             <mat-icon>home</mat-icon>
         </a>
         <span>Wellness app</span>
-
+        <span class="spacer"></span>
+        <a routerLink="/login" routerLinkActive="active" *ngIf="!(userEmail$ | async)">
+            <button mat-raised-button color="accent">SIGN IN</button>
+        </a>
+        <a routerLink="/register" routerLinkActive="active" *ngIf="!(userEmail$ | async)">
+            <button mat-raised-button color="accent">SIGN UP</button>
+        </a>
+        <div *ngIf="(userEmail$ | async)">
+            {{userEmail$|async}}
+            <button mat-raised-button color="accent" (click)="logOut()">SIGN OUT</button>
+        </div>
     </mat-toolbar>
 </p>
 <mat-menu #menu="matMenu">

@@ -1,25 +1,27 @@
+import { UserService } from "./services/user.service";
+
 export class User {
     userName: string;
     firstName: string;
     lastName: string;
     email: string;
     password: string;
-    passwordConfirm: string;
+    password2;
     height: number;
     weight: number;
     profilepic: string;
 
 
-    constructor(uName: string, fName: string, lName: string, eMail: string, pswrd: string, hgt: number, wgt: number, pfPic: string) {
-        this.userName = uName;
-        this.firstName = fName;
-        this.lastName = lName;
-        this.email = eMail;
-        this.password = pswrd;
-        this.passwordConfirm = this.password;
-        this.height = hgt;
-        this.weight = wgt;
-        this.profilepic = pfPic;
+    constructor(private userservice: UserService) {
+        this.userName = this.userservice.userName;
+        this.firstName = this.userservice.firstName;
+        this.lastName = this.userservice.lastName;
+        this.email = this.userservice.email;
+        this.password = this.userservice.password;
+        this.password2=this.userservice.password;
+        this.height = this.userservice.height;
+        this.weight = this.userservice.weight;
+        this.profilepic = this.userservice.profilepic;
     }
 
 

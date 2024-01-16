@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +23,7 @@ export class AuthService {
   login(user: User) {
     return this.afAuth.signInWithEmailAndPassword(user.email, user.password).then(result => {
       this.userEmail.next(user.email);
-      this.router.navigate(['frontpage']);
+      this.router.navigate(['profile']);
     }).catch((error) => {
       console.log(error.message);
     })
@@ -30,7 +31,7 @@ export class AuthService {
 
   logout() {
     return this.afAuth.signOut().then(result => {
-      this.router.navigate(['account/login']);
+      this.router.navigate(['login']);
       this.userEmail.next("");
     }).catch((error) => {
       console.log(error.message);
