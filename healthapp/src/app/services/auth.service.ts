@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
 
-  private userEmail: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private userEmail: BehaviorSubject<string> = new BehaviorSubject<string>("");
 
   constructor(public afAuth: AngularFireAuth, public router: Router) {
     this.afAuth.authState.subscribe(user => {

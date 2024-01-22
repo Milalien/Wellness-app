@@ -5,7 +5,6 @@
     margin: 2px;
 }
 
-
 .content {
     display: flex;
     flex-direction: row;
@@ -16,8 +15,6 @@
 .comp {
     max-width: 450px;
 }
-
-
 
 .todo-card,
 .stat {
@@ -33,14 +30,35 @@
     background-color: var(--primary);
     height: min-content;
     margin: 2px;
+
 }
 
-.mood {
+.good {
     margin: 10px auto 10px auto;
     border-radius: 100%;
     width: 150px;
     height: 150px;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary);
+    background-color: lightgreen;
+}
+
+.average {
+    margin: 10px auto 10px auto;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    background-color: gold;
+}
+
+.poor {
+    margin: 10px auto 10px auto;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    background-color: crimson;
 }
