@@ -35,8 +35,8 @@ export class LoginComponent {
       this.authService.login(this.user);
     }
   }
-  Cancel() {
-    this.router.navigate(['frontpage']);
+  SignUp() {
+    this.router.navigate(['register']);
   }
 
 }

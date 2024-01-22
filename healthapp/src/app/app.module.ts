@@ -15,21 +15,24 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatDividerModule} from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
@@ -85,7 +88,9 @@ import { ModuleWithProviders } from '@angular/core';
       environment.firebase, 'angular-auth-firebase') as
     ModuleWithProviders<AngularFireModule>,
     AngularFireAuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

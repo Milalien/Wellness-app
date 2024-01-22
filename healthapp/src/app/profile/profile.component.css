@@ -4,40 +4,25 @@
     align-items: center;
     margin: auto;
 }
-
-.profilePic {
-    background-color: var(--accent);
-    margin: 5px;
-    padding: 3px;
+.mat-divider{
+    border-top-color: var(--primary);
 }
-
+.profilePic,
 .userName,
 .email,
 .stats,
-.settings,
 .signout {
     background-color: var(--accent);
-    width: 50%;
+    width: 80%;
     margin: 5px;
-    padding: 3px;
 }
-
+.list{
+    color: black;
+}
 .settings {
     flex-direction: row;
+    justify-content: center;
 }
-
-.statGrid {
-    display: flex;
-    flex-direction: column;
-}
-
-.statGrid>div {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-}
-
 button {
     margin: 5px;
-  
 }
