@@ -14,8 +14,8 @@ export class RegisterComponent {
   user: User;
   registerForm: FormGroup;
 
-  constructor(private userservice: UserService) {
-    this.user = new User(this.userservice);
+  constructor(public userservice: UserService) {
+    this.user = this.userservice.exampleUser;
     this.registerForm = new FormGroup({
       firstname: new FormControl(this.user.firstName, [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
       lastname: new FormControl(this.user.lastName, [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
@@ -24,29 +24,29 @@ export class RegisterComponent {
       password: new FormControl(this.user.password, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!=.*\\s).{8,}$')]),
       password2: new FormControl(this.user.password2, [Validators.required])
     });
-   }
-   get email() {
+  }
+  get email() {
     return this.registerForm.get('email');
   }
   get password() {
     return this.registerForm.get('password');
   }
-  get firstname(){
+  get firstname() {
     return this.registerForm.get('firstname');
   }
-  get lastname(){
+  get lastname() {
     return this.registerForm.get('lastname');
   }
-  get username(){
+  get username() {
     return this.registerForm.get('username');
   }
-  get password2(){
+  get password2() {
     return this.registerForm.get('password2');
   }
   onSubmit() {
     console.log("User created");
     // TODO: TÄMÄ TOIMIMAAN
-    //this.userservice.CreateUser();
+    //this.userservice.CreateUser(this.user);
     this.registerForm.reset();
   }
 }

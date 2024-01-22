@@ -28,7 +28,7 @@
     <div class="column">
 
         <!--Card with a mood indicator-->
-        <mat-card class="mood">
+        <mat-card class="{{userService.latestMood}}" id="moodCard">
             <mat-card-header>
                 <mat-card-title>Mood</mat-card-title>
             </mat-card-header>
@@ -37,7 +37,9 @@
                     <mat-icon>add</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item></button>
+                    <button mat-menu-item (click)="GoodMood()">Good</button>
+                    <button mat-menu-item (click)="AvMood()">Average</button>
+                    <button mat-menu-item (click)="PoorMood()">Poor</button>
                 </mat-menu>
             </mat-card-content>
         </mat-card>

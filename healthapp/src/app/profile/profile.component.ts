@@ -11,10 +11,10 @@ import { AuthService } from '../services/auth.service';
 })
 export class ProfileComponent {
 
-  user: User;
+  user: User = this.userServise.exampleUser;
 
   constructor(private userServise: UserService, public router: Router, public authService: AuthService) {
-    this.user = new User(this.userServise);
+
   }
   LogOut() {
     this.authService.logout();
