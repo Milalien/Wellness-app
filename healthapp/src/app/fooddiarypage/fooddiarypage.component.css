@@ -1,0 +1,14 @@
+.fd {
+    width: 60%;
+    margin: auto;
+}
+@media only screen and (max-width: 550px){
+    .fd{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 400px){
+    .fd{
+        width: 100%;
+    }
+}

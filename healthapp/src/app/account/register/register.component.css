@@ -1,7 +1,7 @@
 .formdiv {
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
 }
 
 mat-card-header {
@@ -9,7 +9,7 @@ mat-card-header {
     align-self: center;
 }
 mat-form-field {
-    width: 50%;
+    width: 100%;
 }
 
 .rCard {
@@ -27,4 +27,9 @@ button {
     padding: 5px;
     margin: 5px;
     width: 20%;
+}
+@media only screen and (max-width: 500px) {
+    .rCard{
+        width: 90%;
+    }
 }

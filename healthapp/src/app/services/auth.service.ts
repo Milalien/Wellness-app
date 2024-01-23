@@ -23,7 +23,7 @@ export class AuthService {
   login(user: User) {
     return this.afAuth.signInWithEmailAndPassword(user.email, user.password).then(result => {
       this.userEmail.next(user.email);
-      this.router.navigate(['profile']);
+      this.router.navigate(['frontpage']);
     }).catch((error) => {
       console.log(error.message);
     })

@@ -30,3 +30,8 @@ mat-label {
 
 
 
+@media only screen and (max-width: 500px) {
+    .loginCard{
+        width: 90%;
+    }
+}

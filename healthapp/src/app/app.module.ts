@@ -43,6 +43,7 @@ import { UserService } from './services/user.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ModuleWithProviders } from '@angular/core';
+import { FooddiarypageComponent } from './fooddiarypage/fooddiarypage.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { ModuleWithProviders } from '@angular/core';
     ToolbarComponent,
     LoginComponent,
     RegisterComponent,
+    FooddiarypageComponent,
 
   ],
   imports: [

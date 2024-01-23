@@ -15,7 +15,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
 
   constructor(public userservice: UserService) {
-    this.user = this.userservice.exampleUser;
+    this.user = userservice.newUser;
     this.registerForm = new FormGroup({
       firstname: new FormControl(this.user.firstName, [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
       lastname: new FormControl(this.user.lastName, [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
@@ -45,6 +45,11 @@ export class RegisterComponent {
   }
   onSubmit() {
     console.log("User created");
+    console.log("firstname: ", this.user.firstName);
+    console.log("lastname: ", this.user.lastName);
+    console.log("username: ", this.user.userName);
+    
+
     // TODO: TÄMÄ TOIMIMAAN
     //this.userservice.CreateUser(this.user);
     this.registerForm.reset();

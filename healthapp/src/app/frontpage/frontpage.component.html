@@ -1,5 +1,5 @@
 <div class="content">
-    <div class="column">
+    <div>
         <!--List of todo's, will be imported from calendar events / programs-->
         <mat-card class="todos" role="group" aria-labelledby="todo-today" tabindex="0">
             <mat-card-header>
@@ -7,28 +7,36 @@
             </mat-card-header>
             <mat-card-content>
 
-                <mat-card class="todo-card"><mat-checkbox color="warn">(todo)</mat-checkbox></mat-card>
-                <mat-card class="todo-card"><mat-checkbox color="warn">(todo)</mat-checkbox></mat-card>
-                <mat-card class="todo-card"><mat-checkbox color="warn">(todo)</mat-checkbox></mat-card>
+                <mat-card class="todo-card"><mat-checkbox color="warn"><span class="chk">Todo</span></mat-checkbox></mat-card>
+                <mat-card class="todo-card"><mat-checkbox color="warn"><span class="chk">Todo</span></mat-checkbox></mat-card>
+                <mat-card class="todo-card"><mat-checkbox color="warn"><span class="chk">Todo</span></mat-checkbox></mat-card>
             </mat-card-content>
         </mat-card>
 
         <!--List of users stats, will be imported from users account information-->
-        <mat-card class="stats" role="group" aria-labelledby="stats" tabindex="0">
-            <mat-card-header>
-                <mat-card-title>Stats</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <mat-card class="stat">---</mat-card>
-                <mat-card class="stat">---</mat-card>
-                <mat-card class="stat">---</mat-card>
-            </mat-card-content>
-        </mat-card>
+    <mat-card class="stats" role="group" aria-labelledby="stats" tabindex="0">
+        <mat-card-header>
+            <mat-card-title>Stats</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        <mat-list>
+            <mat-card class="stat">
+                <mat-list-item><span class="list">Height: {{user.height}}</span></mat-list-item>
+            </mat-card>
+            <mat-card class="stat">
+                <mat-list-item><span class="list">Weight: {{user.weight}}</span></mat-list-item>
+            </mat-card>
+            <mat-card class="stat">
+                <mat-list-item><span class="list">Training sessions: xxx</span></mat-list-item>
+            </mat-card>
+        </mat-list>
+    </mat-card-content>
+        
+    </mat-card>
     </div>
-    <div class="column">
 
         <!--Card with a mood indicator-->
-        <mat-card class="{{userService.latestMood}}" id="moodCard">
+        <mat-card class="mood" id="moodCard">
             <mat-card-header>
                 <mat-card-title>Mood</mat-card-title>
             </mat-card-header>
@@ -43,19 +51,17 @@
                 </mat-menu>
             </mat-card-content>
         </mat-card>
-        <!--Food diary component-->
-        <div class="comp">
-            <app-fooddiary></app-fooddiary>
-        </div>
-    </div>
+        
 
-    <div class="column">
+  
         <!--Calendar component-->
-        <div class="comp">
-            <app-calendar></app-calendar>
-
-        </div>
-
-
+    <div class="cal">    
+        <app-calendar></app-calendar>
     </div>
+    
+    <!--Food diary component-->
+    <div class="fd">
+        <app-fooddiary></app-fooddiary>
+    </div>
+
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../services/user.service';
 
@@ -8,24 +8,37 @@ import { UserService } from '../services/user.service';
   templateUrl: './frontpage.component.html',
   styleUrl: './frontpage.component.css'
 })
-export class FrontpageComponent {
+export class FrontpageComponent implements OnInit{
 
-  user: User;
+  user: User = this.userService.exampleUser;
+  
   constructor(public userService: UserService) {
-    //this.user = userService.GetUser("username");
-    this.user = userService.exampleUser;
+    
   }
+  ngOnInit(): void {
+    if(this.user.latestMood=="good"){
+    document.getElementById("moodCard").style.backgroundColor = "lightgreen";
 
+    }
+    if(this.user.latestMood=="average"){
+    document.getElementById("moodCard").style.backgroundColor = "gold";
+
+    }
+    if(this.user.latestMood=="poor"){
+    document.getElementById("moodCard").style.backgroundColor = "crimson";
+
+    }
+  }
   GoodMood() {
-    this.userService.latestMood = "good";
+    this.user.latestMood = "good";
     document.getElementById("moodCard").style.backgroundColor = "lightgreen";
   }
   AvMood() {
-    this.userService.latestMood = "average";
+    this.user.latestMood = "average";
     document.getElementById("moodCard").style.backgroundColor = "gold";
   }
   PoorMood() {
-    this.userService.latestMood = "poor";
+    this.user.latestMood = "poor";
     document.getElementById("moodCard").style.backgroundColor = "crimson";
   }
 

@@ -9,6 +9,7 @@ export class UserService {
 
   users: User[] = [];
   exampleUser: User;
+  newUser: User;
   profilepic = "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   userName = "username";
   firstName = "Pekka";
@@ -22,6 +23,7 @@ export class UserService {
   constructor() {
     this.exampleUser = new User(this.userName, this.firstName, this.lastName, this.email, this.password, this.height, this.weight, this.profilepic, this.latestMood);
     this.users.push(this.exampleUser);
+    this.newUser = new User("","","","","");
   }
 
   CreateUser(user: User) {
