@@ -1,40 +1,61 @@
-
 .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
+
+.content>div {
+    margin: 1%;
+}
+
+.left {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 70%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
 .chk,
-.list{
+.list {
     color: black;
 }
 
 .todo-card,
-.stat{
+.stat {
     background-color: var(--accent);
     padding: 2px;
-    margin: 5px;
+    margin: 1%;
 }
+
 .todos,
 .stats {
-    width: fit-content;
-    min-width: 25%;
+    width: 30%;
+    min-width: 250px;
     background-color: var(--primary);
     height: min-content;
-    
+    margin: 1%;
+
 }
-.fd,.cal,.todos,.stats,.mood{
-    max-width: 50%;
-    margin: 2px;
-}.cal{
+
+.fd {
+
+    margin: 1% auto 1%;
+    flex: 70%;
+
+}
+
+.cal {
     min-width: 400px;
+    flex: 30%;
+    margin: 1%;
 }
 
 .mood {
     border-radius: 100%;
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     justify-content: center;
     align-items: center;
 }
-

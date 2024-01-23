@@ -1,67 +1,71 @@
 <div class="content">
     <div>
-        <!--List of todo's, will be imported from calendar events / programs-->
-        <mat-card class="todos" role="group" aria-labelledby="todo-today" tabindex="0">
-            <mat-card-header>
-                <mat-card-title>Todo - today</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
+        <div class="left">
 
-                <mat-card class="todo-card"><mat-checkbox color="warn"><span class="chk">Todo</span></mat-checkbox></mat-card>
-                <mat-card class="todo-card"><mat-checkbox color="warn"><span class="chk">Todo</span></mat-checkbox></mat-card>
-                <mat-card class="todo-card"><mat-checkbox color="warn"><span class="chk">Todo</span></mat-checkbox></mat-card>
-            </mat-card-content>
-        </mat-card>
+            <!--List of todo's, will be imported from calendar events / programs-->
+            <mat-card class="todos" role="group" aria-labelledby="todo-today" tabindex="0">
+                <mat-card-header>
+                    <mat-card-title>Todo - today</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
 
-        <!--List of users stats, will be imported from users account information-->
-    <mat-card class="stats" role="group" aria-labelledby="stats" tabindex="0">
-        <mat-card-header>
-            <mat-card-title>Stats</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-        <mat-list>
-            <mat-card class="stat">
-                <mat-list-item><span class="list">Height: {{user.height}}</span></mat-list-item>
+                    <mat-card class="todo-card"><mat-checkbox color="warn"><span
+                                class="chk">xxxxxxxxxxx</span></mat-checkbox></mat-card>
+                    <mat-card class="todo-card"><mat-checkbox color="warn"><span
+                                class="chk">xxxxxxxxxxx</span></mat-checkbox></mat-card>
+                    <mat-card class="todo-card"><mat-checkbox color="warn"><span
+                                class="chk">xxxxxxxxxxx</span></mat-checkbox></mat-card>
+                </mat-card-content>
             </mat-card>
-            <mat-card class="stat">
-                <mat-list-item><span class="list">Weight: {{user.weight}}</span></mat-list-item>
+
+            <!--List of users stats, will be imported from users account information-->
+            <mat-card class="stats" role="group" aria-labelledby="stats" tabindex="0">
+                <mat-card-header>
+                    <mat-card-title>Stats</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-list>
+                        <mat-card class="stat">
+                            <mat-list-item><span class="list">Height: {{user.height}}</span></mat-list-item>
+                        </mat-card>
+                        <mat-card class="stat">
+                            <mat-list-item><span class="list">Weight: {{user.weight}}</span></mat-list-item>
+                        </mat-card>
+
+                    </mat-list>
+                </mat-card-content>
+
             </mat-card>
-            <mat-card class="stat">
-                <mat-list-item><span class="list">Training sessions: xxx</span></mat-list-item>
+
+
+            <!--Card with a mood indicator-->
+            <mat-card class="mood" id="moodCard">
+                <mat-card-header>
+                    <mat-card-title>Mood</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <button mat-fab color="accent" [matMenuTriggerFor]="menu">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="GoodMood()">Good</button>
+                        <button mat-menu-item (click)="AvMood()">Average</button>
+                        <button mat-menu-item (click)="PoorMood()">Poor</button>
+                    </mat-menu>
+                </mat-card-content>
             </mat-card>
-        </mat-list>
-    </mat-card-content>
-        
-    </mat-card>
+
+        </div>
+        <!--Food diary component-->
+        <div class="fd">
+            <app-fooddiary></app-fooddiary>
+        </div>
     </div>
-
-        <!--Card with a mood indicator-->
-        <mat-card class="mood" id="moodCard">
-            <mat-card-header>
-                <mat-card-title>Mood</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <button mat-fab color="accent" [matMenuTriggerFor]="menu">
-                    <mat-icon>add</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item (click)="GoodMood()">Good</button>
-                    <button mat-menu-item (click)="AvMood()">Average</button>
-                    <button mat-menu-item (click)="PoorMood()">Poor</button>
-                </mat-menu>
-            </mat-card-content>
-        </mat-card>
-        
-
-  
-        <!--Calendar component-->
-    <div class="cal">    
+    <!--Calendar component-->
+    <div class="cal">
         <app-calendar></app-calendar>
     </div>
-    
-    <!--Food diary component-->
-    <div class="fd">
-        <app-fooddiary></app-fooddiary>
-    </div>
+
+
 
 </div>

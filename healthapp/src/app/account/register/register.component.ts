@@ -11,19 +11,17 @@ import { UserService } from '../../services/user.service';
 })
 export class RegisterComponent {
 
-  user: User;
-  registerForm: FormGroup;
-
+  user: User = this.userservice.newUser;
+  registerForm = new FormGroup({
+    firstname: new FormControl("", [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
+    lastname: new FormControl("", [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    username: new FormControl("", [Validators.required, Validators.minLength(5)]),
+    password: new FormControl("", [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!=.*\\s).{8,}$')]),
+    password2: new FormControl("", [Validators.required])
+  });
   constructor(public userservice: UserService) {
-    this.user = userservice.newUser;
-    this.registerForm = new FormGroup({
-      firstname: new FormControl(this.user.firstName, [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
-      lastname: new FormControl(this.user.lastName, [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
-      email: new FormControl(this.user.email, [Validators.required, Validators.email]),
-      username: new FormControl(this.user.userName, [Validators.required, Validators.minLength(5)]),
-      password: new FormControl(this.user.password, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!=.*\\s).{8,}$')]),
-      password2: new FormControl(this.user.password2, [Validators.required])
-    });
+
   }
   get email() {
     return this.registerForm.get('email');
@@ -44,14 +42,17 @@ export class RegisterComponent {
     return this.registerForm.get('password2');
   }
   onSubmit() {
+
+    this.user = new User(this.registerForm.value.username, this.registerForm.value.firstname, this.registerForm.value.lastname, this.registerForm.value.email, this.registerForm.value.password);
     console.log("User created");
     console.log("firstname: ", this.user.firstName);
     console.log("lastname: ", this.user.lastName);
     console.log("username: ", this.user.userName);
-    
+    console.log("username: ", this.user.password);
+    console.log("username: ", this.user.email);
 
     // TODO: TÄMÄ TOIMIMAAN
-    //this.userservice.CreateUser(this.user);
+    this.userservice.CreateUser(this.user);
     this.registerForm.reset();
   }
 }

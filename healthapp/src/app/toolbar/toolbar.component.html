@@ -16,7 +16,7 @@
             <button mat-raised-button color="accent">SIGN UP</button>
         </a>
         <div *ngIf="(userEmail$ | async)">
-            {{userEmail$|async}}
+            {{user.userName}}
             <button mat-raised-button color="accent" (click)="logOut()">SIGN OUT</button>
         </div>
     </mat-toolbar>
