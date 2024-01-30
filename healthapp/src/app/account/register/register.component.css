@@ -4,10 +4,13 @@
     align-items: center;
 }
 
-mat-card-header {
+mat-card-header,
+mat-card-actions {
     padding: 15px;
     align-self: center;
+    flex-direction: column;
 }
+
 mat-form-field {
     width: 100%;
 }
@@ -26,10 +29,11 @@ mat-label {
 button {
     padding: 5px;
     margin: 5px;
-    width: 20%;
+    width: fit-content;
 }
+
 @media only screen and (max-width: 500px) {
-    .rCard{
+    .rCard {
         width: 90%;
     }
 }

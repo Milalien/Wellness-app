@@ -9,15 +9,17 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { authGuard } from './auth.guard';
 import { FooddiarypageComponent } from './fooddiarypage/fooddiarypage.component';
+import { UpdateinfoComponent } from './account/updateinfo/updateinfo.component';
 
 const routes: Routes = [
   { path: 'calendar', component: CalendarComponent, canActivate: [authGuard] },
   { path: 'frontpage', component: FrontpageComponent, canActivate: [authGuard] },
   { path: 'fooddiary', component: FooddiarypageComponent, canActivate: [authGuard] },
-  { path: 'programs', component: ProgramsComponent, canActivate: [authGuard]},
-  { path: 'profile', component: ProfileComponent, canActivate: [authGuard]},
+  { path: 'programs', component: ProgramsComponent, canActivate: [authGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'updateinfo', component: UpdateinfoComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 

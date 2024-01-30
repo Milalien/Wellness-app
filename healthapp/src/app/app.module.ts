@@ -20,12 +20,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
@@ -44,6 +44,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ModuleWithProviders } from '@angular/core';
 import { FooddiarypageComponent } from './fooddiarypage/fooddiarypage.component';
+import { UpdateinfoComponent } from './account/updateinfo/updateinfo.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { FooddiarypageComponent } from './fooddiarypage/fooddiarypage.component'
     LoginComponent,
     RegisterComponent,
     FooddiarypageComponent,
+    UpdateinfoComponent,
 
   ],
   imports: [

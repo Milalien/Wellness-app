@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,24 +9,24 @@ import { UserService } from '../services/user.service';
   templateUrl: './frontpage.component.html',
   styleUrl: './frontpage.component.css'
 })
-export class FrontpageComponent implements OnInit{
+export class FrontpageComponent implements OnInit {
 
   user: User = this.userService.exampleUser;
-  
-  constructor(public userService: UserService) {
-    
+
+  constructor(public userService: UserService, private router: Router) {
+
   }
   ngOnInit(): void {
-    if(this.user.latestMood=="good"){
-    document.getElementById("moodCard").style.backgroundColor = "lightgreen";
+    if (this.user.latestMood == "good") {
+      document.getElementById("moodCard").style.backgroundColor = "lightgreen";
 
     }
-    if(this.user.latestMood=="average"){
-    document.getElementById("moodCard").style.backgroundColor = "gold";
+    if (this.user.latestMood == "average") {
+      document.getElementById("moodCard").style.backgroundColor = "gold";
 
     }
-    if(this.user.latestMood=="poor"){
-    document.getElementById("moodCard").style.backgroundColor = "crimson";
+    if (this.user.latestMood == "poor") {
+      document.getElementById("moodCard").style.backgroundColor = "crimson";
 
     }
   }
@@ -42,4 +43,7 @@ export class FrontpageComponent implements OnInit{
     document.getElementById("moodCard").style.backgroundColor = "crimson";
   }
 
+  Update() {
+    this.router.navigate(['updateinfo'])
+  }
 }

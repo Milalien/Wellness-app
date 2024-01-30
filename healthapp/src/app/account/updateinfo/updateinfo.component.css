@@ -1,0 +1,21 @@
+.formdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    background-color: var(--primary);
+    width: 50%;
+    margin: auto;
+
+}
+
+mat-card-header {
+    padding: 15px;
+    align-self: center;
+}
+
+mat-form-field {
+    width: 100%;
+}

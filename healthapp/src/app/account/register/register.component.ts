@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { User } from '../../user';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,7 @@ export class RegisterComponent {
     password: new FormControl("", [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!=.*\\s).{8,}$')]),
     password2: new FormControl("", [Validators.required])
   });
-  constructor(public userservice: UserService) {
+  constructor(public userservice: UserService, private router: Router) {
 
   }
   get email() {
@@ -41,6 +42,9 @@ export class RegisterComponent {
   get password2() {
     return this.registerForm.get('password2');
   }
+  logIn() {
+    this.router.navigate(['login'])
+  }
   onSubmit() {
 
     this.user = new User(this.registerForm.value.username, this.registerForm.value.firstname, this.registerForm.value.lastname, this.registerForm.value.email, this.registerForm.value.password);
@@ -48,8 +52,8 @@ export class RegisterComponent {
     console.log("firstname: ", this.user.firstName);
     console.log("lastname: ", this.user.lastName);
     console.log("username: ", this.user.userName);
-    console.log("username: ", this.user.password);
-    console.log("username: ", this.user.email);
+    console.log("password: ", this.user.password);
+    console.log("email: ", this.user.email);
 
     // TODO: TÄMÄ TOIMIMAAN
     this.userservice.CreateUser(this.user);

@@ -11,12 +11,15 @@ import { AuthService } from '../services/auth.service';
 })
 export class ProfileComponent {
 
-  user: User = this.userServise.exampleUser;
+  user: User = this.userService.exampleUser;
 
-  constructor(private userServise: UserService, public router: Router, public authService: AuthService) {
+  constructor(private userService: UserService, public router: Router, public authService: AuthService) {
 
   }
   LogOut() {
     this.authService.logout();
+  }
+  Update() {
+    this.router.navigate(['updateinfo'])
   }
 }
