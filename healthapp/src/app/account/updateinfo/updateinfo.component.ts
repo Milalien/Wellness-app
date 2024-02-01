@@ -14,17 +14,13 @@ export class UpdateinfoComponent {
     firstname: new FormControl(this.user.firstName, [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
     lastname: new FormControl(this.user.lastName, [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
     username: new FormControl(this.user.userName, [Validators.required, Validators.minLength(5)]),
-    email: new FormControl(this.user.email, [Validators.required, Validators.email]),
-    password: new FormControl(this.user.password, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!=.*\\s).{8,}$')]),
     weight: new FormControl(this.user.weight)
   });
   constructor(public userService: UserService) {
 
   }
 
-  get password() {
-    return this.updateForm.get('password');
-  }
+
   get firstname() {
     return this.updateForm.get('firstname');
   }
@@ -37,9 +33,7 @@ export class UpdateinfoComponent {
   get weight() {
     return this.updateForm.get('weight')
   }
-  get email() {
-    return this.updateForm.get('email');
-  }
+
   onSubmit() {
     this.user.firstName = this.updateForm.value.firstname;
     this.user.lastName = this.updateForm.value.lastname;

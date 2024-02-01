@@ -15,21 +15,11 @@
                     <mat-label>Username</mat-label>
                     <input matInput placeholder="Username" formControlName="username">
                 </mat-form-field>
-                <!--THIS DOES NOT CHANGE THE ACTUAL INFO BECAUSE FIREBASE IS NOT FULLY CONNECTED-->
-                <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder="Email" formControlName="email">
-                </mat-form-field>
-                <!--THIS DOES NOT CHANGE THE ACTUAL INFO BECAUSE FIREBASE IS NOT FULLY CONNECTED-->
-                <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput placeholder="Password" formControlName="password">
-                </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Weight</mat-label>
                     <input matInput placeholder="Weight" formControlName="weight">
                 </mat-form-field>
-                <button mat-raised-button color="accent" type="submit" [disabled]="updateForm.untouched">Submit</button>
+                <button mat-raised-button color="accent" type="submit" [disabled]="updateForm.pristine">Submit</button>
 
             </div>
         </form>

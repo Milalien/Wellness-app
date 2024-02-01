@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FooddiaryComponent } from './fooddiary/fooddiary.component';
 import { ProgramsComponent } from './programs/programs.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './account/profile/profile.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'updateinfo', component: UpdateinfoComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({

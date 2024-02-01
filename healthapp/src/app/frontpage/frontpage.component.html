@@ -2,23 +2,41 @@
     <div>
         <div class="left">
 
-            <!--List of todo's, will be imported from calendar events / programs-->
+            <!--List of todo's-->
             <mat-card class="todos" role="group" aria-labelledby="todo-today" tabindex="0">
                 <mat-card-header>
                     <mat-card-title>Todo - today</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
+                    <mat-card class="todo-card" *ngFor="let todo of todos"><mat-checkbox color="warn"><span
+                                class="chk">{{todo.name}}</span></mat-checkbox></mat-card>
 
-                    <mat-card class="todo-card"><mat-checkbox color="warn"><span
-                                class="chk">xxxxxxxxxxx</span></mat-checkbox></mat-card>
-                    <mat-card class="todo-card"><mat-checkbox color="warn"><span
-                                class="chk">xxxxxxxxxxx</span></mat-checkbox></mat-card>
-                    <mat-card class="todo-card"><mat-checkbox color="warn"><span
-                                class="chk">xxxxxxxxxxx</span></mat-checkbox></mat-card>
+
+                    <mat-card class="add-todos-form" [formGroup]="form">
+
+                        <ng-container formArrayName="todoFormArray">
+                            <ng-container *ngIf="todoFormArray.length > 0">
+                                <div [formGroup]="todoForm">
+                                    <mat-form-field appearance="fill">
+                                        <input matInput formControlName="name" placeholder="todo">
+                                    </mat-form-field>
+                                    <button class="btn" mat-raised-button color="accent"
+                                        (click)="addTodo()">Add</button>
+
+                                </div>
+
+                            </ng-container>
+                        </ng-container>
+
+                    </mat-card>
                 </mat-card-content>
+                <mat-card-actions>
+                    <button class="btn" mat-raised-button color="accent" (click)="newTodo()">New todo</button>
+
+                </mat-card-actions>
             </mat-card>
 
-            <!--List of users stats, will be imported from users account information-->
+            <!--List of users stats, imported from users account information-->
             <mat-card class="stats" role="group" aria-labelledby="stats" tabindex="0">
                 <mat-card-header>
                     <mat-card-title>Stats</mat-card-title>
@@ -35,7 +53,7 @@
                     </mat-list>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button class="update" mat-raised-button color="accent" (click)="Update()">Update</button>
+                    <button class="btn" mat-raised-button color="accent" (click)="Update()">Update</button>
                 </mat-card-actions>
 
             </mat-card>

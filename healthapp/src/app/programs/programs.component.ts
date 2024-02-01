@@ -11,7 +11,9 @@ export class ProgramsComponent {
   exerciseForm: FormGroup = new FormGroup({
     exerciseList: new FormArray([])
   });
+  constructor() {
 
+  }
   getExerciseFIelds(): FormGroup {
     return new FormGroup({
       exerciseName: new FormControl(''),

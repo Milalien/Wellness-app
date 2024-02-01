@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CalendarEvent } from 'angular-calendar';
+import { User } from '../user';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +9,8 @@ import { CalendarEvent } from 'angular-calendar';
 export class EventsService {
 
   events: CalendarEvent[] = [];
-
-  constructor() {
+  user: User = this.userService.exampleUser;
+  constructor(public userService: UserService) {
 
   }
 

@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ProgramsComponent } from './programs/programs.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './account/profile/profile.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FooddiaryComponent } from './fooddiary/fooddiary.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
