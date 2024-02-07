@@ -1,9 +1,21 @@
 .row {
     display: flex;
     justify-content: space-evenly;
+    margin: auto;
+    width: 90%;
+}
+
+.col {
+    display: block;
+    margin: auto;
 }
 
 .container {
     margin: auto;
     background-color: var(--primary);
+}
+
+button {
+    padding: 2px;
+    margin: 1px;
 }

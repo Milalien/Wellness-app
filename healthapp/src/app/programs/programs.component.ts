@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Exercise } from '../exercise';
+
+interface exType {
+  value: String,
+  viewVal: String
+}
 
 @Component({
   selector: 'app-programs',
@@ -7,46 +13,47 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
   styleUrl: './programs.component.css'
 })
 export class ProgramsComponent {
+  exerciseForm: FormGroup;
+  newProgram: Exercise[];
+  newExercise: Exercise;
+  eType: String;
+  exTypes: exType[] = [
+    { value: "rxw", viewVal: "Reps x Weight" },
+    { value: "time", viewVal: "Time" }
+  ]
 
-  exerciseForm: FormGroup = new FormGroup({
-    exerciseList: new FormArray([])
+  form = this.fb.group({
+    exerciseType: new FormControl('', Validators.required),
+    exerciseName: new FormControl("", Validators.required),
+    sets: new FormControl(Validators.required),
+    reps: new FormControl(),
+    weight: new FormControl(),
+    time: new FormControl(),
+    program: this.fb.array([])
   });
-  constructor() {
+
+  constructor(private fb: FormBuilder) {
 
   }
-  getExerciseFIelds(): FormGroup {
-    return new FormGroup({
-      exerciseName: new FormControl(''),
-      exerciseType: new FormControl(''),
-      exerciseReps: new FormControl(''),
-    });
-  }
 
-  exerciseListArray() {
-    return this.exerciseForm.get('exerciseList') as FormArray;
+  get program() {
+    return this.form.controls["program"] as FormArray;
   }
 
   addExercise() {
-    this.exerciseListArray().push(this.getExerciseFIelds());
+    this.eType = "";
+    this.exerciseForm = new FormGroup({
+      type: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
+      sets: new FormControl(Validators.required),
+      reps: new FormControl(),
+      weight: new FormControl(),
+      time: new FormControl()
+    })
+    this.program.push(this.exerciseForm);
   }
 
-  removeExercise(i: number) {
-    this.exerciseListArray().removeAt(i);
+  deleteExercise(exerciseIndex: number) {
+    this.program.removeAt(exerciseIndex);
   }
-
-  getFormData() {
-    console.log(this.exerciseForm.value);
-  }
-
-  onSubmit(e: any) {
-
-
-    //DOes fuckall, will fix later
-    console.log(this.exerciseForm.value);
-
-
-
-  }
-
-
 }

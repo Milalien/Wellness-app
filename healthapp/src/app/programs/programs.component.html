@@ -1,19 +1,49 @@
-<p>programs works!</p>
-<div>
-    <form [formGroup]="exerciseForm" (ngSubmit)="onSubmit(form2)" #form2="ngForm">
-        <div class="exercise" formArrayName="exerciseList">
-            <mat-card *ngFor="let exercise of exerciseListArray().controls; let i = index;">
+<mat-card class="progForm">
+    <form [formGroup]="form">
+        <ng-container formArrayName="program">
+            <ng-container *ngFor="let exerciseForm of program.controls; let i = index">
+                <form class="lesson-form-row" [formGroup]="exerciseForm">
 
-                <input type="text" name="" id="" formControlName="exerciseName" placeholder="type">
-                <input type="text" name="" id="" formControlName="exerciseType" placeholder="exercise">
-                <input type="text" name="" id="" formCOntrolName="exerciseReps" placeholder="reps">
-                <button mat-raised-button color="warm" (click)="removeExercise(i)">Remove exercise</button>
+                    <mat-form-field appearance="outline">
+                        <mat-select [(value)]="eType" formControlName="type" placeholder="Exercise type">
+                            @for (exType of exTypes; track exType) {
+                            <mat-option [value]="exType.value">{{exType.viewVal}}</mat-option>
+                            }
+                        </mat-select>
+                    </mat-form-field>
 
-            </mat-card>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="name" placeholder="Exercise name">
+                    </mat-form-field>
 
-        </div>
-        <button mat-raised-button color="warm" (click)="addExercise()">Add exercise</button>
-        <button mat-raised-button color="warm" [disabled]="form2.invalid">Submit</button>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="sets" placeholder="Sets" type="number">
+                    </mat-form-field>
+                    <ngcontainer *ngIf="eType == 'rxw'">
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="reps" placeholder="Reps" type="number">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="weight" placeholder="Weight" type="number">
+                        </mat-form-field>
+                    </ngcontainer>
+                    <ng-container *ngIf="eType == 'time'">
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="time" placeholder="Time in minutes" type="number">
+                        </mat-form-field>
+                    </ng-container>
 
+                    <button mat-fab class="btn" color="warn" (click)="deleteExercise(i)">
+                        <mat-icon>remove</mat-icon>
+                    </button>
+
+                </form>
+            </ng-container>
+        </ng-container>
     </form>
-</div>
+    <mat-card-actions>
+        <button mat-fab class="btn" color="accent" (click)="addExercise()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>

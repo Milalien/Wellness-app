@@ -10,8 +10,8 @@ describe('ProgramsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ProgramsComponent]
     })
-      .compileComponents();
-
+    .compileComponents();
+    
     fixture = TestBed.createComponent(ProgramsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

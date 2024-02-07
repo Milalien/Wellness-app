@@ -30,6 +30,21 @@
 
 }
 
+.add-todos-form {
+    background-color: var(--primary);
+
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+.btn1 {
+    display: block;
+    margin: auto;
+    width: 110px;
+
+}
+
 .todos,
 .stats {
     width: 30%;
@@ -61,4 +76,5 @@
 
 .btn {
     margin: auto;
+    width: 110px;
 }
