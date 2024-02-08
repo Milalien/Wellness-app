@@ -1,17 +1,18 @@
 export class Nutrients {
 
-    calories2: string;
-    protein2: string;
-    carbs2: string;
-    fat2: string;
-    notes2: string;
+    nutrients: Nutrients[];
+    Calories: string;
+    Protein: string;
+    Carbs: string;
+    Fat: string;
+    Notes: string;
 
-    constructor() {
-        this.calories2 = "";
-        this.protein2 = "";
-        this.carbs2 = "";
-        this.fat2 = "";
-        this.notes2 = "";
+    constructor(calories: string, protein: string, carbs: string, fat: string, notes: string) {
+        this.Calories = calories;
+        this.Protein = protein;
+        this.Carbs = carbs;
+        this.Fat = fat;
+        this.Notes = notes;
     }
 
 }

@@ -40,6 +40,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 
 import { UserService } from './services/user.service';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ModuleWithProviders } from '@angular/core';
@@ -78,6 +79,7 @@ import { UpdateinfoComponent } from './account/updateinfo/updateinfo.component';
     MatDatepickerModule,
     MatExpansionModule,
     FormsModule,
+    HttpClientModule,
     MatSelectModule,
     MatInputModule,
     MatIconModule,

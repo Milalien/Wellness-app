@@ -18,11 +18,11 @@ export class FooddiaryComponent {
 
   constructor() {
 
-    this.currentNutrients.calories2 = this.calories;
-    this.currentNutrients.protein2 = this.protein;
-    this.currentNutrients.carbs2 = this.carbs;
-    this.currentNutrients.fat2 = this.fat;
-    this.currentNutrients.notes2 = this.notes;
+    this.currentNutrients.calories = this.calories;
+    this.currentNutrients.protein = this.protein;
+    this.currentNutrients.carbs = this.carbs;
+    this.currentNutrients.fat = this.fat;
+    this.currentNutrients.notes = this.notes;
 
   }
 
