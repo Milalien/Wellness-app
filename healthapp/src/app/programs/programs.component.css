@@ -1,7 +1,13 @@
-.exercise {
-    width: 250px;
-    flex-direction: column;
-    padding: 5px;
-    align-content: center;
+mat-form-field {
+    margin: 1px;
+}
 
+.btn {
+    margin: 1px;
+}
+
+.progForm {
+    background-color: var(--primary);
+    margin: auto;
+    max-width: 90%;
 }

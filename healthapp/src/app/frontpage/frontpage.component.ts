@@ -2,14 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
-import { ThemePalette } from '@angular/material/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Todoitem } from '../todoitem';
 
-export interface Todo {
-  name: string;
-  completed: boolean;
 
-}
 
 @Component({
   selector: 'app-frontpage',
@@ -19,8 +15,7 @@ export interface Todo {
 export class FrontpageComponent implements OnInit {
 
   user: User = this.userService.exampleUser;
-  todo: Todo;
-  todos: Todo[];
+  todos: Todoitem[];
   todoForm: FormGroup;
 
   form = this.fb.group({
@@ -69,7 +64,7 @@ export class FrontpageComponent implements OnInit {
   newTodo() {
 
     this.todoForm = new FormGroup({
-      name: new FormControl('', Validators.required),
+      name: new FormControl("", Validators.required),
       completed: new FormControl(false)
     });
     this.todoFormArray.push(this.todoForm);
@@ -79,8 +74,9 @@ export class FrontpageComponent implements OnInit {
     return this.form.get('name');
   }
   addTodo() {
-    this.todo.name = this.todoForm.value.name;
 
-    this.todos.push(this.todo);
+    this.todos.push(new Todoitem(this.todoForm.value.name));
+
+    this.todoFormArray.removeAt(0);
   }
 }

@@ -12,15 +12,15 @@
                                 class="chk">{{todo.name}}</span></mat-checkbox></mat-card>
 
 
-                    <mat-card class="add-todos-form" [formGroup]="form">
+                    <div class="add-todos-form" [formGroup]="form">
 
                         <ng-container formArrayName="todoFormArray">
                             <ng-container *ngIf="todoFormArray.length > 0">
                                 <div [formGroup]="todoForm">
-                                    <mat-form-field appearance="fill">
+                                    <mat-form-field appearance="outline">
                                         <input matInput formControlName="name" placeholder="todo">
                                     </mat-form-field>
-                                    <button class="btn" mat-raised-button color="accent"
+                                    <button class="btn1" mat-raised-button color="accent"
                                         (click)="addTodo()">Add</button>
 
                                 </div>
@@ -28,7 +28,7 @@
                             </ng-container>
                         </ng-container>
 
-                    </mat-card>
+                    </div>
                 </mat-card-content>
                 <mat-card-actions>
                     <button class="btn" mat-raised-button color="accent" (click)="newTodo()">New todo</button>
