@@ -30,6 +30,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -84,6 +85,7 @@ import { UpdateinfoComponent } from './account/updateinfo/updateinfo.component';
     MatInputModule,
     MatIconModule,
     MatFormFieldModule,
+    MatTableModule,
     MatToolbarModule,
     MatMenuModule,
     MatNativeDateModule,

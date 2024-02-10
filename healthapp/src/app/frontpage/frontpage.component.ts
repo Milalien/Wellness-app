@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
+import { User } from '../Models/user';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Todoitem } from '../todoitem';
+import { Todoitem } from '../Models/todoitem';
 
 
 

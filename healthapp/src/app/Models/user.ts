@@ -1,4 +1,5 @@
-import { UserService } from "./services/user.service";
+import { CalendarEvent } from "angular-calendar";
+import { UserService } from "../services/user.service";
 
 export class User {
 
@@ -13,8 +14,9 @@ export class User {
     weight: number;
     profilepic: string;
     latestMood: string;
+    userEvents: CalendarEvent[];
 
-    constructor(username: string, fname: string, lname: string, eMail: string, pswrd: string, hght?: number, wght?: number, pfpc?: string, latmood?: string) {
+    constructor(username: string, fname: string, lname: string, eMail: string, pswrd: string, hght?: number, wght?: number, pfpc?: string, latmood?: string, usEvents?: CalendarEvent[]) {
         this.userName = username;
         this.firstName = fname;
         this.lastName = lname;
@@ -25,6 +27,7 @@ export class User {
         this.weight = wght;
         this.profilepic = pfpc;
         this.latestMood = latmood;
+        this.userEvents = usEvents;
     }
 
 

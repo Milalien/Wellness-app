@@ -9,6 +9,16 @@
     padding: 2px;
 }
 
+.diary {
+    background-color: var(--primary);
+
+}
+
+.content {
+    background-color: var(--primary);
+    margin: 10px auto;
+}
+
 .nutrient {
     width: 25%;
 }

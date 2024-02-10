@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Nutrients } from '../nutrients';
+import { Nutrients } from '../Models/nutrients';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,24 +11,17 @@ import { HttpClientModule } from '@angular/common/http';
 export class FooddiaryService {
 
   nutrients: Nutrients[] = [];
-  exampleNutrients: Nutrients;
-  newNutrients: Nutrients;
-  calories = "1";
-  prottein = "1";
-  carbs = "1";
-  fat = "1";
-  notes = "yabadaba";
-  url
+  user = this.userService.exampleUser;
+  constructor(private Http: HttpClient, public userService: UserService) {
 
-
-  constructor(private Http: HttpClient) {
-
-    this.exampleNutrients = new Nutrients(this.calories, this.prottein, this.carbs, this.fat, this.notes);
-    this.nutrients.push(this.exampleNutrients);
-    this.newNutrients = new Nutrients("", "", "", "", "");
   }
 
-
+  addDiaryEntry(newInput: Nutrients) {
+    this.nutrients.push(newInput);
+  }
+  getDiaryEntries() {
+    return this.nutrients;
+  }
   /* Ei toimi vielä
     postData(nutrients: Nutrients): Observable<Nutrients> {
       let headers = new HttpHeaders().append('ApiKey', 'your-api-key');

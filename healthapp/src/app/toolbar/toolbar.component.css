@@ -1,6 +1,17 @@
 .spacer {
     flex: 1 1 auto;
 }
+
 button {
     margin: 2px;
+}
+
+@media screen and (max-width: 500px) {
+
+    .username,
+    .title {
+        visibility: hidden;
+    }
+
+
 }

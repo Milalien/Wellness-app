@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Exercise } from '../exercise';
+import { Exercise } from '../Models/exercise';
 
 interface exType {
   value: String,

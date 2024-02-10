@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../user';
+import { User } from '../Models/user';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -30,7 +30,7 @@ export class UserService {
     this.users.push(user);
   }
   GetUser(username: string): User {
-    return this.users.find(x => x.userName === username)
+    return this.users.find(x => x.userName == username)
   }
   GetUsers(): Observable<User[]> {
     const users = of(this.users)

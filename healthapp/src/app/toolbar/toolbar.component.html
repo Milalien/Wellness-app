@@ -7,7 +7,7 @@
             aria-label="programs icon-button">
             <mat-icon>home</mat-icon>
         </a>
-        <span>Wellness app</span>
+        <span class="title">Wellness app</span>
         <span class="spacer"></span>
         <a routerLink="/login" routerLinkActive="active" *ngIf="!(userEmail$ | async)">
             <button mat-raised-button color="accent">SIGN IN</button>
@@ -15,10 +15,10 @@
         <a routerLink="/register" routerLinkActive="active" *ngIf="!(userEmail$ | async)">
             <button mat-raised-button color="accent">SIGN UP</button>
         </a>
-        <div *ngIf="(userEmail$ | async)">
-            {{user.userName}}
+        <span *ngIf="(userEmail$ | async)">
+            <span class="username">{{user.userName}}</span>
             <button mat-raised-button color="accent" (click)="logOut()">SIGN OUT</button>
-        </div>
+        </span>
     </mat-toolbar>
 </p>
 <mat-menu #menu="matMenu">

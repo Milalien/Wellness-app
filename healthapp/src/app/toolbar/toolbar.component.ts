@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
-import { User } from '../user';
+import { User } from '../Models/user';
 
 @Component({
   selector: 'app-toolbar',
