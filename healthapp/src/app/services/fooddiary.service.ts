@@ -16,7 +16,7 @@ export class FooddiaryService {
 
   }
 
-  addDiaryEntry(newInput: Nutrients) {
+  postDiaryEntry(newInput: Nutrients) {
     this.nutrients.push(newInput);
   }
   getDiaryEntries() {

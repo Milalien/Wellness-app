@@ -1,11 +1,14 @@
 <mat-card class="progForm">
     <form [formGroup]="form">
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="name" placeholder="Program name">
+        </mat-form-field>
         <ng-container formArrayName="program">
             <ng-container *ngFor="let exerciseForm of program.controls; let i = index">
                 <form class="lesson-form-row" [formGroup]="exerciseForm">
 
                     <mat-form-field appearance="outline">
-                        <mat-select [(value)]="eType" formControlName="type" placeholder="Exercise type">
+                        <mat-select [(value)]="eType[i]" formControlName="type" placeholder="Exercise type">
                             @for (exType of exTypes; track exType) {
                             <mat-option [value]="exType.value">{{exType.viewVal}}</mat-option>
                             }
@@ -19,7 +22,7 @@
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="sets" placeholder="Sets" type="number">
                     </mat-form-field>
-                    <ngcontainer *ngIf="eType == 'rxw'">
+                    <ngcontainer *ngIf="eType[i] == 'rxw'">
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="reps" placeholder="Reps" type="number">
                         </mat-form-field>
@@ -27,7 +30,7 @@
                             <input matInput formControlName="weight" placeholder="Weight" type="number">
                         </mat-form-field>
                     </ngcontainer>
-                    <ng-container *ngIf="eType == 'time'">
+                    <ng-container *ngIf="eType[i] == 'time'">
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="time" placeholder="Time in minutes" type="number">
                         </mat-form-field>
@@ -40,10 +43,38 @@
                 </form>
             </ng-container>
         </ng-container>
+
+        <mat-card-actions>
+            <button mat-fab class="btn" color="accent" (click)="addExercise()">
+                <mat-icon>add</mat-icon>
+            </button>
+            <button mat-fab class="btn" color="accent" (click)="onSubmit()">
+                <mat-icon>
+                    done_outline
+                </mat-icon>
+            </button>
+        </mat-card-actions>
     </form>
-    <mat-card-actions>
-        <button mat-fab class="btn" color="accent" (click)="addExercise()">
-            <mat-icon>add</mat-icon>
-        </button>
-    </mat-card-actions>
+
+</mat-card>
+
+<mat-card class="content">
+    <mat-card-header><mat-card-title>Your programs:</mat-card-title></mat-card-header>
+    <mat-card class="prog" *ngFor="let program of programs">
+        <mat-card-header><mat-card-title>
+                <h3>{{program.name}}</h3>
+            </mat-card-title></mat-card-header>
+        <mat-card class="exer" *ngFor="let exercise of program.prog">
+            <mat-card-header><mat-card-title>
+                    <h4>{{exercise.name}}</h4>
+                </mat-card-title></mat-card-header>
+            <mat-card-content class="ex">
+                <div>Sets: {{exercise.sets}}</div>
+                <div *ngIf="exercise.reps > 0">Reps: {{exercise.reps}}</div>
+                <div *ngIf="exercise.weight > 0">Weight: {{exercise.weight}}</div>
+                <div *ngIf="exercise.time > 0">Time: {{exercise.time}}</div>
+
+            </mat-card-content>
+        </mat-card>
+    </mat-card>
 </mat-card>

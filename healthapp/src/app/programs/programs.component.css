@@ -11,3 +11,36 @@ mat-form-field {
     margin: auto;
     max-width: 90%;
 }
+
+.content {
+    background-color: var(--primary);
+    margin: 10px auto;
+    max-width: 90%;
+    align-items: center;
+}
+
+.prog {
+    width: 90%;
+    background-color: var(--accent);
+    margin: 5px;
+
+
+}
+
+.exer {
+    background-color: var(--primary);
+
+    margin: 5px;
+
+}
+
+.ex {
+
+    display: flex;
+    flex-direction: row;
+
+    div {
+        margin-left: 10%;
+
+    }
+}

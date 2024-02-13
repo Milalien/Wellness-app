@@ -15,3 +15,13 @@ export class Exercise {
         this.time = time;
     }
 }
+export class Program {
+
+    name: String;
+    prog: Exercise[];
+
+    constructor(name: String, prog: Exercise[]) {
+        this.name = name;
+        this.prog = prog;
+    }
+}

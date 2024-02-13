@@ -51,7 +51,7 @@ export class FooddiaryComponent implements OnInit {
 
 
   onSubmit() {
-    this.fdService.addDiaryEntry(new Nutrients(this.NutrientForm.value.Kcal, this.NutrientForm.value.Protein, this.NutrientForm.value.Carbs, this.NutrientForm.value.Fats, this.NutrientForm.value.notes));
+    this.fdService.postDiaryEntry(new Nutrients(this.NutrientForm.value.Kcal, this.NutrientForm.value.Protein, this.NutrientForm.value.Carbs, this.NutrientForm.value.Fats, this.NutrientForm.value.notes));
     this.diaryContent = this.fdService.getLastTen();
     this.table.renderRows();
     this.NutrientForm.reset();
