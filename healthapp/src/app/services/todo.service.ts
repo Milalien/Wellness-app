@@ -1,34 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Todoitem } from '../Models/todoitem';
 import { Observable, of } from 'rxjs';
+import { UserService } from './user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
-  toDos: Todoitem[] = [];
-  toDo: Todoitem;
-  newTodo: Todoitem;
-  name: string = "";
+  todos: Todoitem[] = [];
 
+  constructor(private Http: HttpClient, public userService: UserService) {
 
-  constructor() {
-    this.toDo = new Todoitem(this.name);
-    this.toDos.push(this.toDo);
-    this.newTodo = new Todoitem("");
   }
 
   CreateTodo(todo: Todoitem) {
-    this.toDos.push(todo);
+    this.todos.push(todo);
+    console.log(todo);
   }
 
-  GetTodo(Name: string): Todoitem {
-    return this.toDos.find(x => x.name == Name)
+  GetTodo() {
+    return this.todos;
   }
 
   GetTodos(): Observable<Todoitem[]> {
-    const toDos = of(this.toDos)
+    const toDos = of(this.todos)
     return toDos
   }
 
