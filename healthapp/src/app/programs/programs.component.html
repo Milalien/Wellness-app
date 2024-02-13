@@ -69,7 +69,7 @@
                     <h4>{{exercise.name}}</h4>
                 </mat-card-title></mat-card-header>
             <mat-card-content class="ex">
-                <div>Sets: {{exercise.sets}}</div>
+                <div *ngIf="exercise.sets > 0">Sets: {{exercise.sets}}</div>
                 <div *ngIf="exercise.reps > 0">Reps: {{exercise.reps}}</div>
                 <div *ngIf="exercise.weight > 0">Weight: {{exercise.weight}}</div>
                 <div *ngIf="exercise.time > 0">Time: {{exercise.time}}</div>

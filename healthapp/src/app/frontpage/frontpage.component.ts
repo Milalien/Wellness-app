@@ -4,6 +4,7 @@ import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Todoitem } from '../Models/todoitem';
+import { TodoService } from '../services/todo.service';
 
 
 
@@ -15,7 +16,7 @@ import { Todoitem } from '../Models/todoitem';
 export class FrontpageComponent implements OnInit {
 
   user: User = this.userService.exampleUser;
-  todos: Todoitem[];
+  todos: Todoitem[] = [];
   todoForm: FormGroup;
 
   form = this.fb.group({
@@ -24,13 +25,14 @@ export class FrontpageComponent implements OnInit {
     todoFormArray: this.fb.array([])
   });
 
-  constructor(public userService: UserService, private router: Router, private fb: FormBuilder) {
-    this.todos = [];
+  constructor(public userService: UserService, private router: Router, private fb: FormBuilder, private tdService: TodoService) {
   }
   get todoFormArray() {
     return this.form.controls["todoFormArray"] as FormArray;
   }
   ngOnInit(): void {
+    this.todos = this.tdService.GetTodo();
+
     if (this.user.latestMood == "good") {
       document.getElementById("moodCard").style.backgroundColor = "lightgreen";
 
@@ -70,12 +72,15 @@ export class FrontpageComponent implements OnInit {
     this.todoFormArray.push(this.todoForm);
   }
 
+  done(name: String) {
+    this.tdService.deleteTodo(name);
+  }
   get name() {
     return this.form.get('name');
   }
-  addTodo() {
+  postTodo() {
 
-    this.todos.push(new Todoitem(this.todoForm.value.name));
+    this.tdService.postTodo(new Todoitem(this.todoForm.value.name));
 
     this.todoFormArray.removeAt(0);
   }

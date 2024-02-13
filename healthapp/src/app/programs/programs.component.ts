@@ -31,7 +31,7 @@ export class ProgramsComponent implements OnInit {
     name: new FormControl('', Validators.required),
     exerciseType: new FormControl('', Validators.required),
     exerciseName: new FormControl('', Validators.required),
-    sets: new FormControl(null, Validators.required),
+    sets: new FormControl(0, Validators.required),
     reps: new FormControl(null),
     weight: new FormControl(null),
     time: new FormControl(null),
@@ -56,7 +56,7 @@ export class ProgramsComponent implements OnInit {
     this.exerciseForm = new FormGroup({
       type: new FormControl('', Validators.required),
       name: new FormControl('', Validators.required),
-      sets: new FormControl(null, Validators.required),
+      sets: new FormControl(0, Validators.required),
       reps: new FormControl(null),
       weight: new FormControl(null),
       time: new FormControl(null)
@@ -77,7 +77,7 @@ export class ProgramsComponent implements OnInit {
     }
     this.newProg = new Program(this.form.value.name, this.newProgram);
     this.progService.postProgram(this.newProg);
-    console.log(this.progService.getPrograms());
+    this.form.reset();
 
   }
 }

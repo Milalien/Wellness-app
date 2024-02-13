@@ -14,10 +14,13 @@ export class TodoService {
   constructor(private Http: HttpClient, public userService: UserService) {
 
   }
+  deleteTodo(name: String) {
+    this.todos.splice(this.todos.findIndex(t => t.name === name), 1)
+  }
 
-  CreateTodo(todo: Todoitem) {
+  postTodo(todo: Todoitem) {
     this.todos.push(todo);
-    console.log(todo);
+
   }
 
   GetTodo() {

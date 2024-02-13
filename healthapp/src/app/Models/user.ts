@@ -1,5 +1,4 @@
 import { CalendarEvent } from "angular-calendar";
-import { UserService } from "../services/user.service";
 
 export class User {
 
