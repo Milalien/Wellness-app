@@ -55,7 +55,7 @@ export class RegisterComponent {
     console.log("password: ", this.user.password);
     console.log("email: ", this.user.email);
 
-    // TODO: TÄMÄ TOIMIMAAN
+    //This doesn't work completely since firebase signup hasn't been done.
     this.userservice.CreateUser(this.user);
     this.registerForm.reset();
   }

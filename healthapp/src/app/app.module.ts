@@ -28,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
@@ -81,6 +82,8 @@ import { UpdateinfoComponent } from './account/updateinfo/updateinfo.component';
     MatExpansionModule,
     FormsModule,
     HttpClientModule,
+    MatPaginator,
+    MatPaginatorModule,
     MatSelectModule,
     MatInputModule,
     MatIconModule,

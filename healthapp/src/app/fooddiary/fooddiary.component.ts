@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Nutrients } from '../Models/nutrients';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FooddiaryService } from '../services/fooddiary.service';
 import { MatTable } from '@angular/material/table';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-fooddiary',
@@ -14,18 +15,22 @@ export class FooddiaryComponent implements OnInit {
   displayedColumns: string[] = ['Kcal', 'Protein', 'Carbs', 'Fats', 'Notes'];
   diaryContent: Nutrients[];
   NutrientForm = new FormGroup({
-    Kcal: new FormControl(),
-    Protein: new FormControl(),
-    Carbs: new FormControl(),
-    Fats: new FormControl(),
+    Kcal: new FormControl(null, [Validators.required]),
+    Protein: new FormControl(null, [Validators.required]),
+    Carbs: new FormControl(null, [Validators.required]),
+    Fats: new FormControl(null, [Validators.required]),
     notes: new FormControl()
-  })
+  });
+
+
   constructor(private fdService: FooddiaryService) {
 
   }
   @ViewChild(MatTable) table: MatTable<Nutrients>;
+
   ngOnInit(): void {
-    this.diaryContent = this.fdService.getDiaryEntries();
+    this.diaryContent = this.fdService.getLastTen();
+
   }
 
   get Calories() {
@@ -47,8 +52,9 @@ export class FooddiaryComponent implements OnInit {
 
   onSubmit() {
     this.fdService.addDiaryEntry(new Nutrients(this.NutrientForm.value.Kcal, this.NutrientForm.value.Protein, this.NutrientForm.value.Carbs, this.NutrientForm.value.Fats, this.NutrientForm.value.notes));
-    this.NutrientForm.reset;
-    this.diaryContent = this.fdService.getDiaryEntries();
+    this.diaryContent = this.fdService.getLastTen();
     this.table.renderRows();
+    this.NutrientForm.reset();
+
   }
 }

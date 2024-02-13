@@ -22,6 +22,14 @@ export class FooddiaryService {
   getDiaryEntries() {
     return this.nutrients;
   }
+  getLastTen() {
+    if (this.nutrients.length >= 10) {
+      return this.nutrients.slice((this.nutrients.length - 10), this.nutrients.length);
+    }
+    else {
+      return this.nutrients;
+    }
+  }
   /* Ei toimi vielä
     postData(nutrients: Nutrients): Observable<Nutrients> {
       let headers = new HttpHeaders().append('ApiKey', 'your-api-key');
