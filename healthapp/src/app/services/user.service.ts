@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from '../Models/user';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { AuthService } from './auth.service';
+import { __values } from 'tslib';
 
 @Injectable({
   providedIn: 'root'
@@ -20,20 +22,22 @@ export class UserService {
   weight = 80;
   latestMood = "good";
 
-  constructor() {
+
+
+  constructor(private authService: AuthService) {
     this.exampleUser = new User(this.userName, this.firstName, this.lastName, this.email, this.password, this.height, this.weight, this.profilepic, this.latestMood);
     this.users.push(this.exampleUser);
-    this.newUser = new User("", "", "", "", "");
   }
 
   CreateUser(user: User) {
     this.users.push(user);
   }
   GetUser(username: string): User {
-    return this.users.find(x => x.userName == username)
+    return this.users.find(x => x.userName == username);
   }
+
   GetUsers(): Observable<User[]> {
-    const users = of(this.users)
+    const users = of(this.users);
     return users;
   }
 }

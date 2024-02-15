@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Nutrients } from '../Models/nutrients';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 
 @Injectable({

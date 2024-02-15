@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  user: User = this.userservice.newUser;
+  user: User;
   registerForm = new FormGroup({
     firstname: new FormControl("", [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
     lastname: new FormControl("", [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]*$')]),
