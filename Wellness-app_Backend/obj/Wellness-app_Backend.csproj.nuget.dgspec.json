@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub-repos\\Wellness-app\\Wellness-app_Backend\\Wellness-app_Backend.csproj": {}
+    "C:\\Users\\timil\\OneDrive\\Documents\\GitHub\\Projektityo1\\Wellness-app_Backend\\Wellness-app_Backend.csproj": {}
   },
   "projects": {
-    "C:\\GitHub-repos\\Wellness-app\\Wellness-app_Backend\\Wellness-app_Backend.csproj": {
+    "C:\\Users\\timil\\OneDrive\\Documents\\GitHub\\Projektityo1\\Wellness-app_Backend\\Wellness-app_Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub-repos\\Wellness-app\\Wellness-app_Backend\\Wellness-app_Backend.csproj",
+        "projectUniqueName": "C:\\Users\\timil\\OneDrive\\Documents\\GitHub\\Projektityo1\\Wellness-app_Backend\\Wellness-app_Backend.csproj",
         "projectName": "Wellness-app_Backend",
-        "projectPath": "C:\\GitHub-repos\\Wellness-app\\Wellness-app_Backend\\Wellness-app_Backend.csproj",
-        "packagesPath": "C:\\Users\\karkk\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub-repos\\Wellness-app\\Wellness-app_Backend\\obj\\",
+        "projectPath": "C:\\Users\\timil\\OneDrive\\Documents\\GitHub\\Projektityo1\\Wellness-app_Backend\\Wellness-app_Backend.csproj",
+        "packagesPath": "C:\\Users\\timil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\timil\\OneDrive\\Documents\\GitHub\\Projektityo1\\Wellness-app_Backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\karkk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\timil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,16 +44,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.InMemory": {
-              "target": "Package",
-              "version": "[8.0.2, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -60,15 +55,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -57,4 +57,5 @@ export class FooddiaryComponent implements OnInit {
     this.NutrientForm.reset();
 
   }
+
 }

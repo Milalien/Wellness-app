@@ -3,6 +3,7 @@ import { User } from '../Models/user';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { AuthService } from './auth.service';
 import { __values } from 'tslib';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +22,11 @@ export class UserService {
   height = 180;
   weight = 80;
   latestMood = "good";
+  userUrl = "xx";
 
 
 
-  constructor(private authService: AuthService) {
+  constructor(private Htpp: HttpClient, private authService: AuthService) {
     this.exampleUser = new User(this.userName, this.firstName, this.lastName, this.email, this.password, this.height, this.weight, this.profilepic, this.latestMood);
     this.users.push(this.exampleUser);
   }
@@ -40,4 +42,19 @@ export class UserService {
     const users = of(this.users);
     return users;
   }
+
+  getUser() {
+    return this.Htpp.get<User>(this.userUrl);
+  }
+
+  postUser(user: User): Observable<User> {
+    return this.Htpp.post<User>(this.userUrl, user).pipe();
+  }
+
+  putUser(user: User): Observable<User> {
+    return this.Htpp.put<User>(this.userUrl, user).pipe();
+  }
+
+  deleteUser() { }
+
 }

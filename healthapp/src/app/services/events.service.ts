@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { CalendarEvent } from 'angular-calendar';
 import { User } from '../Models/user';
 import { UserService } from './user.service';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,8 @@ export class EventsService {
 
   events: CalendarEvent[] = [];
   user = this.userService.exampleUser;
-  constructor(public userService: UserService) {
+  eventUrl: string = "xx";
+  constructor(private Http: HttpClient, public userService: UserService) {
 
   }
 
@@ -22,5 +25,13 @@ export class EventsService {
   }
   deleteEvent(eventToDelete: CalendarEvent) {
     this.events = this.events.filter((event) => event !== eventToDelete);
+  }
+
+  getEvent() {
+    return this.Http.get<CalendarEvent>(this.eventUrl);
+  }
+
+  postEvent(ecents: CalendarEvent): Observable<CalendarEvent> {
+    return this.Http.post<CalendarEvent>(this.eventUrl, this.events).pipe();
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Nutrients } from '../Models/nutrients';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 
@@ -11,6 +11,7 @@ export class FooddiaryService {
 
   nutrients: Nutrients[] = [];
   user = this.userService.exampleUser;
+  foodUrl: string = "xxx";
   constructor(private Http: HttpClient, public userService: UserService) {
 
   }
@@ -29,17 +30,20 @@ export class FooddiaryService {
       return this.nutrients;
     }
   }
-  /* Ei toimi vielä
-    postData(nutrients: Nutrients): Observable<Nutrients> {
-      let headers = new HttpHeaders().append('ApiKey', 'your-api-key');
-      return HttpClient.post(this.url, nutrients, { headers: headers })
-        .pipe(
-          map(response => {
-            return response as Nutrients
-          })
-        );
-    }
-  
-  */
+
+  handleError(error: any, nutrients): any {
+    return console.log("Error");
+  }
+
+  getEntry() {
+    return this.Http.get<Nutrients>(this.foodUrl);
+  }
+
+  postEntry(nutrients: Nutrients): Observable<Nutrients> {
+    return this.Http.post<Nutrients>(this.foodUrl, nutrients).pipe(catchError(this.handleError('addEntry', nutrients)));
+  }
+
+
+
 
 }

@@ -10,7 +10,7 @@ namespace Wellness_app_Backend.Models
         }
         public DbSet<Todoitem> Todoitems { get; set; } = null!;
 
-        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<User> Users { get; set; } = null!; 
 
         public DbSet<FoodDiaryEntry> FoodDiaryEntries { get; set; } = null!;
         public DbSet<ExerciseProgram> ExercisePrograms { get; set; } = null!;
