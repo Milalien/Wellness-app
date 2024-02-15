@@ -4,6 +4,7 @@ namespace Wellness_app_Backend.Models
 {
     public class ExerciseProgram
     {
+        public long Id { get; set; }
         [Required]
         [MinLength(3)]
         [MaxLength(255)]
@@ -12,6 +13,8 @@ namespace Wellness_app_Backend.Models
     }
     public class Exercise
     {
+        public long Id { get; set; }
+
         [Required]
         [MinLength(3)]
         [MaxLength(255)]
