@@ -27,11 +27,11 @@ export class EventsService {
     this.events = this.events.filter((event) => event !== eventToDelete);
   }
 
-  getEvent() {
+  getEvents2() {
     return this.Http.get<CalendarEvent>(this.eventUrl);
   }
 
-  postEvent(ecents: CalendarEvent): Observable<CalendarEvent> {
+  postEvent(): Observable<CalendarEvent> {
     return this.Http.post<CalendarEvent>(this.eventUrl, this.events).pipe();
   }
 }

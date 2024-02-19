@@ -1,11 +1,5 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "VZ7qXG6AfQ7o/fbbHyAYscFDEnqINwCdsr2/OQZH5cYabpPJ5Nh/ApBvy/r+CJo5GF9ADc/AziLTO5KmLi6h4g==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\timil\\OneDrive\\Documents\\GitHub\\Projektityo1\\Wellness-app_Backend\\Wellness-app_Backend.csproj",
-  "expectedPackageFiles": [],
-=======
   "dgSpecHash": "eErcTbCs/TI//3Xwi+WWgV6CYziXnxOO+8v/C48mbqwbI/7mlvyJfM8Bg7HhypKcZOKTZvvudfPoDb+jYKldgA==",
   "success": true,
   "projectFilePath": "C:\\GitHub-repos\\Wellness-app\\Wellness-app_Backend\\Wellness-app_Backend.csproj",
@@ -157,6 +151,12 @@
     "C:\\Users\\karkk\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\karkk\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
->>>>>>> Stashed changes
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\GitHub-repos\\Wellness-app\\Wellness-app_Backend\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
