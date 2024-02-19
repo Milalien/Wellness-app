@@ -12,7 +12,8 @@ export class ProgramService {
   programs: Program[];
   Ex1 = new Exercise("time", "running", 1, 0, 0, 30);
   Ex2 = new Exercise("rxw", "Squat", 3, 10, 100);
-  programUrl: string = "xx";
+
+  private programUrl: 'api/ExercisePrograms';
 
   constructor(private Http: HttpClient) {
     this.exampleProgram = new Program("Example program", [this.Ex1, this.Ex2]);
@@ -36,12 +37,19 @@ export class ProgramService {
     this.programs.splice(this.programs.findIndex(p => p.name === name), 1);
   }
 
-  getProgram1() {
-    return this.Http.get<Program>(this.programUrl);
+  // HTTP methods (don't work yet) :
+
+  getProgram1(id: number) {
+    const url = `${this.programUrl}/${id}`;
+    return this.Http.get<Program>(url);
   }
 
-  postProgram1(exampleProgram: Program): Observable<Program> {
-    return this.Http.post<Program>(this.programUrl, this.programs).pipe();
+  getPrograms1(): Observable<Program[]> {
+    return this.Http.get<Program[]>(this.programUrl);
+  }
+
+  postProgram1(program: Program): Observable<Program> {
+    return this.Http.post<Program>(this.programUrl, program);
   }
 
 }

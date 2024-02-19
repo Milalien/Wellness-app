@@ -22,7 +22,8 @@ export class UserService {
   height = 180;
   weight = 80;
   latestMood = "good";
-  userUrl = "xx";
+
+  private userUrl = "api/Users";
 
 
 
@@ -43,16 +44,22 @@ export class UserService {
     return users;
   }
 
-  getUser() {
-    return this.Htpp.get<User>(this.userUrl);
+  // HTTP methods (don't work yet) :
+
+  getUser(id: number) {
+    const url = `${this.userUrl}/${id}`;
+    return this.Htpp.get<User>(url);
+  }
+  getUsers(): Observable<User[]> {
+    return this.Htpp.get<User[]>(this.userUrl);
   }
 
   postUser(user: User): Observable<User> {
-    return this.Htpp.post<User>(this.userUrl, user).pipe();
+    return this.Htpp.post<User>(this.userUrl, user);
   }
 
   putUser(user: User): Observable<User> {
-    return this.Htpp.put<User>(this.userUrl, user).pipe();
+    return this.Htpp.put<User>(this.userUrl, user);
   }
 
   deleteUser() { }

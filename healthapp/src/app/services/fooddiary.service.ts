@@ -11,7 +11,9 @@ export class FooddiaryService {
 
   nutrients: Nutrients[] = [];
   user = this.userService.exampleUser;
-  foodUrl: string = "xxx";
+
+  private foodUrl = 'api/FoodDiaryEntries';
+
   constructor(private Http: HttpClient, public userService: UserService) {
 
   }
@@ -31,16 +33,21 @@ export class FooddiaryService {
     }
   }
 
-  handleError(error: any, nutrients): any {
-    return console.log("Error");
-  }
 
-  getEntry() {
-    return this.Http.get<Nutrients>(this.foodUrl);
+
+  // HTTP methods (don't work yet) :
+
+  getEntry(id: number) {
+    const url = `${this.foodUrl}/${id}`;
+    return this.Http.get<Nutrients>(url);
+  }
+  getEntries(): Observable<Nutrients[]> {
+    return this.Http.get<Nutrients[]>(this.foodUrl);
+
   }
 
   postEntry(nutrients: Nutrients): Observable<Nutrients> {
-    return this.Http.post<Nutrients>(this.foodUrl, nutrients).pipe(catchError(this.handleError('addEntry', nutrients)));
+    return this.Http.post<Nutrients>(this.foodUrl, nutrients);
   }
 
 

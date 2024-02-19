@@ -12,7 +12,9 @@ export class EventsService {
 
   events: CalendarEvent[] = [];
   user = this.userService.exampleUser;
-  eventUrl: string = "xx";
+
+  private eventUrl = 'api/Events';
+
   constructor(private Http: HttpClient, public userService: UserService) {
 
   }
@@ -27,11 +29,13 @@ export class EventsService {
     this.events = this.events.filter((event) => event !== eventToDelete);
   }
 
-  getEvents2() {
-    return this.Http.get<CalendarEvent>(this.eventUrl);
+  // HTTP methods (don't work yet) :
+
+  getEvents2(): Observable<CalendarEvent[]> {
+    return this.Http.get<CalendarEvent[]>(this.eventUrl);
   }
 
-  postEvent(): Observable<CalendarEvent> {
-    return this.Http.post<CalendarEvent>(this.eventUrl, this.events).pipe();
+  postEvent(event: CalendarEvent): Observable<CalendarEvent> {
+    return this.Http.post<CalendarEvent>(this.eventUrl, event);
   }
 }

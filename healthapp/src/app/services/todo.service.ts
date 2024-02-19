@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class TodoService {
 
   todos: Todoitem[] = [];
-  todoUrl: string = "xx";
+  private todoUrl: 'api/Todoitems';
 
 
   constructor(private Http: HttpClient, public userService: UserService) {
@@ -34,12 +34,19 @@ export class TodoService {
     return toDos
   }
 
-  getTodo1() {
-    return this.Http.get<Todoitem>(this.todoUrl);
+  // HTTP methods (don't work yet) :
+
+  getTodo(id: number): Observable<Todoitem> {
+    const url = `${this.todoUrl}/${id}`;
+    return this.Http.get<Todoitem>(url);
+
+  }
+  getTodos1(): Observable<Todoitem[]> {
+    return this.Http.get<Todoitem[]>(this.todoUrl);
   }
 
-  postData(todo: Todoitem): Observable<Todoitem> {
-    return this.Http.post<Todoitem>(this.todoUrl, todo).pipe();
+  postTodo1(todo: Todoitem): Observable<Todoitem> {
+    return this.Http.post<Todoitem>(this.todoUrl, todo);
   }
 
 }
