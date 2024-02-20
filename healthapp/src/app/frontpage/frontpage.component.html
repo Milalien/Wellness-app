@@ -2,7 +2,7 @@
     <div>
         <div class="left">
 
-            <!--List of todo's-->
+            <!--LIST OF TODOS-->
             <mat-card class="todos" role="group" aria-labelledby="todo-today" tabindex="0">
                 <mat-card-header>
                     <mat-card-title>Todo - today</mat-card-title>
@@ -13,7 +13,7 @@
                                 class="chk">{{todo.name}}</span></mat-checkbox>
                     </mat-card>
 
-
+                    <!--FORM TO ADD TODOS-->
                     <div class="add-todos-form" [formGroup]="form">
 
                         <ng-container formArrayName="todoFormArray">
@@ -61,7 +61,7 @@
             </mat-card>
 
 
-            <!--Card with a mood indicator-->
+            <!--Card with a mood indicator, press button and change mood in the dropdown menu-->
             <mat-card class="mood" id="moodCard">
                 <mat-card-header>
                     <mat-card-title>Mood</mat-card-title>

@@ -1,3 +1,4 @@
+<!--FORM TO ADD NEW PROGRAMS-->
 <mat-card class="progForm">
     <form [formGroup]="form">
         <mat-form-field appearance="outline">
@@ -22,6 +23,7 @@
                     <mat-form-field appearance="outline">
                         <input matInput formControlName="sets" placeholder="Sets" type="number">
                     </mat-form-field>
+                    <!--Only shows when exercise type is 'rxw'(reps x weight)-->
                     <ngcontainer *ngIf="eType[i] == 'rxw'">
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="reps" placeholder="Reps" type="number">
@@ -30,6 +32,7 @@
                             <input matInput formControlName="weight" placeholder="Weight" type="number">
                         </mat-form-field>
                     </ngcontainer>
+                    <!--Only shows when exercise type is 'time'-->
                     <ng-container *ngIf="eType[i] == 'time'">
                         <mat-form-field appearance="outline">
                             <input matInput formControlName="time" placeholder="Time in minutes" type="number">
@@ -57,7 +60,7 @@
     </form>
 
 </mat-card>
-
+<!--LIST OF ADDED PROGRAMS:-->
 <mat-card class="content">
     <mat-card-header><mat-card-title>Your programs:</mat-card-title></mat-card-header>
     <mat-card class="prog" *ngFor="let program of programs">
