@@ -1,15 +1,14 @@
 # WELLNESS-APP
 
-A school project we made with a friend, this version has been seperated so I could keep working on it.
+A project we made with a classmate, this version has been seperated so I could keep working on it and keep it on my GitHub.
 
-A web app made for a user to track their training, nutrition and mood from day to day.
+It is an Angular web app made for a user to track their training, nutrition and mood from day to day.
 
-Currently it is a working prototype frontend, backend is going to be created and implemented in the future.
-Also will be working on syncing the programs with the calendar in the future.
+Currently it is a working prototype frontend, backend could be created and connected but I've moved on from this project.
 
 ## Login
 
-When you first open the app in your browser, it directs you to the login page. There is only one user that you can use to sign in, sign up isn't implemented since the log in currently uses Firebase but will be changed to work in the backend.
+When you first open the app in your browser, it directs you to the login page. There is only one user that you can use to sign in, sign up isn't implemented since the login uses a simple Firebase backend.
 
 ## Frontpage
 
